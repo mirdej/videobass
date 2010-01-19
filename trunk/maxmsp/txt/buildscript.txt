@@ -1,3 +1,0 @@
-open thispatcher
-include Videobass:/Users/vb/Patches/vb/hi.ExtendedUsages.txt
-include Videobass:/Users/vb/Patches/vb/hi.UsagePages.txtinclude Videobass:/Users/vb/Patches/vb/vb.filmstripviewGL.jsinclude Videobass:/Users/vb/Patches/vb/vb.levelgauge.jsinclude Videobass:/Users/vb/Patches/vb/vb.playlist_menu.jsinclude Videobass:/Users/vb/Patches/vb/vb.speedgauge.jsinclude Videobass:/Users/vb/Patches/vb/vb.triggerhandler.jsinclude Videobass:/Users/vb/Patches/vb/vb.zone.ui.jsinclude Videobass:/Users/vb/Patches/vb/vb08.5mixYUV.jxs
