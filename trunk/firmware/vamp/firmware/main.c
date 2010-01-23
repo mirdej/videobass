@@ -16,6 +16,7 @@
 
 #include "gnusb_cmds.h"			// USB command and error constants
 #include "gnusbcore.h"			// the gnusb library: setup and utility functions 
+#include <util/delay.h>
 
 // HID Report Descriptor
 #include "reportDescriptor.c"
@@ -45,7 +46,7 @@ static u16		ad_values[8];	// raw ad values
 static u08		ad_smoothing;	// smoothing level of ad samples (0 -  15)
 static u08		ad_samplepause;	// counts up to ADC_PAUSE between samples
 static u08		sentButtons;
-
+static u08		device_without_host;
 
 
 static reportStruct 	usb_reply;
@@ -100,6 +101,21 @@ usbMsgLen_t usbFunctionSetup(u08 data[8])
 	return 0;
 }
 
+static void initForUsbConnectivity(void)
+{
+uchar   i = 0;
+
+    usbInit();
+    /* enforce USB re-enumerate: */
+    usbDeviceDisconnect();  /* do this while interrupts are disabled */
+    while(--i){         /* fake USB disconnect for > 250 ms */
+        wdt_reset();
+        _delay_ms(1);
+    }
+    usbDeviceConnect();
+    sei();
+}
+
 
 // ------------------------------------------------------------------------------
 // - Check ADC and update ad_values
@@ -126,7 +142,7 @@ void checkAnlogPorts (void) {
 			// basic low pass filter
 			ad_values[ad_mux] = (ad_values[ad_mux] * ad_smoothing + temp) / (ad_smoothing + 1);
 			
-				pot = usb_reply.pots + (7 - ad_mux);
+				pot = usb_reply.pots + ad_mux;
 				char oldVal = *pot;
 				*pot = ad_values[ad_mux] >> 2;							// copy 8 most significant bits to usb reply 
 				dataChanged |= *pot != oldVal;	
@@ -151,6 +167,44 @@ void checkButtons(void) {
 	usb_reply.buttons = buttonstate;
 }
 
+void wait_a_second(void) {
+	u08 i;
+	i = 10;
+	while(i) {
+		wdt_reset();
+		_delay_ms(100);
+		i--;
+	}
+}
+
+void power_up(void) {
+
+	device_without_host = 1;
+	PORTC |= (1 << 7);		// turn on optocoupler -> power button on mac mini
+
+	
+	while(device_without_host) {
+        wdt_reset();			// reset Watchdog timer - otherwise Watchdog will reset gnusb
+		checkAnlogPorts();		// see if we've finished an analog-digital conversion
+		if (ad_values[7] > 500) device_without_host = 0;
+	}
+	
+
+	// there seems to be power, wait a second
+	wait_a_second();
+	
+	device_without_host = 1;
+	// see if we still have power
+	
+	while(device_without_host) {
+        wdt_reset();			// reset Watchdog timer - otherwise Watchdog will reset gnusb
+		checkAnlogPorts();		// see if we've finished an analog-digital conversion
+		if (ad_values[7] > 500) device_without_host = 0;
+	}
+	wait_a_second();
+
+}
+
 // ==============================================================================
 // - main
 // ------------------------------------------------------------------------------
@@ -169,11 +223,31 @@ int main(void)
 
 	// PORTC: Default output
 	DDRC 	= 0xff;		// set all pins to output
-	PORTC 	= 0xff;		// turn off all leds
+	PORTC 	= 0x00;		// turn off all leds
 	
 	// PORTD: gnusbCore stuff: USB, status leds, jumper
-	initCoreHardware();
+	// initCoreHardware(); 
+	// the vAMP first gets powered by the external supply, we'll init USB only when we see power on the USB bus
+	
+	DDRD = 0xe0; 	// 1110 0000 -> set PD0..PD4 to inputs -> USB pins
+	PORTD = 0x70; 	// set Pullup for Bootloader Jumper, no pullups on USB pins -> 0111 0000
+	wdt_enable(WDTO_1S);	// enable watchdog timer
+
+	wait_a_second();
+	
+	device_without_host = 1;
+		
+	while(device_without_host) {
+		power_up();
+	}
+	PORTC &= ~(1 << 7);	// release power button on mac mini
+
+	initForUsbConnectivity();
+	sei();			// turn on interrupts
+
 	statusLedOn(StatusLed_Green);
+	
+	
 
 	// ------------------------- Main Loop
 	while(1) {
