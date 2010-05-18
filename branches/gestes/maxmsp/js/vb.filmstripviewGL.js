@@ -19,8 +19,8 @@ var result = new SQLResult;
 
 var clip_count = 0;
 
-var thumb_path = '/Users/me/zzz-noBackup/vb_thumbs/';
-var clip_path = '/Users/me/zzz-noBackup/vb_clips';
+var thumb_path = '/Users/gestes/Pictures';
+var clip_path = '/Users/gestes/Movies';
 var filmstrip_path;
 var playlist_name;
 
