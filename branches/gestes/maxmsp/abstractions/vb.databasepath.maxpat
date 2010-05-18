@@ -22,9 +22,9 @@
 					"maxclass" : "button",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 272.0, 59.0, 20.0, 20.0 ],
-					"id" : "obj-10"
+					"id" : "obj-10",
+					"outlettype" : [ "bang" ]
 				}
 
 			}
@@ -43,13 +43,13 @@
 				"box" : 				{
 					"maxclass" : "newobj",
 					"text" : "prepend database_path",
+					"fontsize" : 12.0,
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"fontsize" : 12.0,
-					"outlettype" : [ "" ],
 					"patching_rect" : [ 166.0, 187.0, 137.0, 20.0 ],
 					"id" : "obj-7",
-					"fontname" : "Arial"
+					"fontname" : "Arial",
+					"outlettype" : [ "" ]
 				}
 
 			}
@@ -57,27 +57,28 @@
 				"box" : 				{
 					"maxclass" : "newobj",
 					"text" : "opendialog",
+					"fontsize" : 12.0,
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"fontsize" : 12.0,
-					"outlettype" : [ "", "bang" ],
 					"patching_rect" : [ 274.0, 103.0, 69.0, 20.0 ],
 					"id" : "obj-6",
-					"fontname" : "Arial"
+					"fontname" : "Arial",
+					"outlettype" : [ "", "bang" ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"maxclass" : "message",
-					"text" : "/Users/vb/Patches/videobass_database",
+					"text" : "boxon:/Applications/Max5/videobass_database",
+					"linecount" : 3,
+					"fontsize" : 12.0,
 					"numinlets" : 2,
 					"numoutlets" : 1,
-					"fontsize" : 12.0,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 166.0, 135.0, 221.0, 18.0 ],
+					"patching_rect" : [ 166.0, 135.0, 121.0, 46.0 ],
 					"id" : "obj-5",
-					"fontname" : "Arial"
+					"fontname" : "Arial",
+					"outlettype" : [ "" ]
 				}
 
 			}
@@ -85,13 +86,13 @@
 				"box" : 				{
 					"maxclass" : "newobj",
 					"text" : "loadbang",
+					"fontsize" : 12.0,
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"fontsize" : 12.0,
-					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 166.0, 100.0, 60.0, 20.0 ],
 					"id" : "obj-3",
-					"fontname" : "Arial"
+					"fontname" : "Arial",
+					"outlettype" : [ "bang" ]
 				}
 
 			}
