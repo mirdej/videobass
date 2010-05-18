@@ -56,6 +56,13 @@ function play_list(name) {
 	msg_int(0);	// play first clip in playlist
 }
 
+function film_info (idx,path,duration,timescale) {
+		if (clip_count <= idx) clip_count = idx+1;
+		paths[idx] 			= path;
+		lengths[idx]		= duration;
+		timescales[idx] 	= timescale;
+}
+
 
 function msg_int (idx) {
 	
