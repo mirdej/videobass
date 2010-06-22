@@ -235,13 +235,14 @@ int main(void)
 
 	wait_a_second();
 	
-	device_without_host = 1;
-		
+	// version for batiment k
+/*device_without_host = 1;
+	
 	while(device_without_host) {
 		power_up();
 	}
 	PORTC &= ~(1 << 7);	// release power button on mac mini
-
+*/
 	initForUsbConnectivity();
 	sei();			// turn on interrupts
 
