@@ -42,7 +42,7 @@
 static u08		ad_mux;			// current ad input channel
 static u08		pot_mux;			// mux counter for HEF4067 multiplexer
 
-static u16		ad_values[17];	// raw ad values
+static u16		ad_values[21];	// raw ad values
 static u08		ad_smoothing;	// smoothing level of ad samples (0 -  15)
 static u08		ad_samplepause;	// counts up to ADC_PAUSE between samples
 
@@ -140,8 +140,8 @@ void checkBtns (void) {
 	while (!(SPSR & (1 << SPIF))) {}	// wait for transition to finish
 	//button_state = reverseBits(SPDR);
 	temp = SPDR;
-	button_state = temp >> 4;
-	button_state |= (PINA & 0xc0); // calibrate button is wired on PINA
+	button_state = temp;//temp >> 4;
+//	button_state |= (PINA & 0xc0); // calibrate button is wired on PINA
 	
 	// again send and receive 8 bits
 	SPDR = 0xff;			// Start transmission
@@ -153,10 +153,26 @@ void checkBtns (void) {
 	
 		if (button_state == old_button_state) return;
 
+/*
+	The videobass2011 has the buttons wired this way
+	2 times: MSB -> UNFOLD2 JOY2 STEP+2 STEP-2 UNFOLD1 Joy1 STEP+1 STEP-1 -> LSB
+	The old videobass sends
+	CALIB NOP NOP NOP UNFOLD4 UNFOLD3 UNFOLD2 UNFOLD1
 	
-	usb_reply.steppers = (button_state >> 8) | (button_state >> 9);   // for each pair of bits only 00, 01 and 11 are valid...
-	usb_reply.buttons = (u08)button_state & 0xFF;
-
+	We will transform to old format for now for compatibility reasons...	
+*/
+	
+	usb_reply.buttons = 	(button_state >> 3) & 0x01;
+	usb_reply.buttons |= 	(button_state >> 6) & 0x02;
+	usb_reply.buttons |= 	(button_state >> 9) & 0x04;
+	usb_reply.buttons |= 	(button_state >> 12) & 0x08;
+	
+	usb_reply.steppers = 	(button_state >> 0) & 0x03;
+	usb_reply.steppers |= 	(button_state >> 2) & 0x0C;
+	usb_reply.steppers |= 	(button_state >> 4) & 0x30;
+	usb_reply.steppers |= 	(button_state >> 6) & 0xC0;
+	usb_reply.steppers |= 	(usb_reply.steppers & 0xAA) >> 1; // for each pair of bits only 00, 01 and 11 are valid...
+	
 	dataChanged = 1;
 	old_button_state = button_state;
 }
@@ -189,34 +205,46 @@ void checkAnlogPorts (void) {
 	
 			if (ad_mux < 4) {
 	
-				unsigned int* string = usb_reply.string + ad_mux;
+				unsigned int* string = &usb_reply.string[3 - ad_mux];
 				unsigned int oldVal = *string;
-				*string = ad_values[ad_mux];							// copy 8 most significant bits to usb reply 
+				*string = ad_values[ad_mux];							
 				dataChanged |= *string != oldVal;
 
 				ad_mux = (ad_mux + 1) % 5;									// advance multiplexer index	
 		
 			} else {
+				
+				/*
+					Pin Layout of HEF4067:
+					0	Key
+					1	Speed
+					2	Joystick
+					3	Joystick etc...
+				*/
 
-
-				if (pot_mux < 8) {
-					
-					if (pot_mux % 2) {						
-						pot = usb_reply.joyy + pot_mux / 2;
-					} else {
-						pot = usb_reply.joyx + pot_mux / 2;
-					}
-				} else {
-					if (pot_mux < 12) pot = usb_reply.speed + (3 - (pot_mux - 8));
-					else pot = &usb_reply.buffer;
+				temp = (pot_mux % 4);
+				switch (temp) {
+					case 0:			
+						pot = usb_reply.key + (pot_mux / 4);
+						break;
+					case 1:
+						pot = usb_reply.speed + (pot_mux / 4);
+						break;
+					case 2:
+						pot = usb_reply.joyy + (pot_mux / 4);
+						break;
+					case 3:
+						pot = usb_reply.joyx + (pot_mux / 4);
+						break;
 				}
+
 
 				char oldVal = *pot;
 				*pot = ad_values[ad_mux + pot_mux] >> 2;							// copy 8 most significant bits to usb reply 
 				dataChanged |= *pot != oldVal;	
 
-				pot_mux = (pot_mux + 1) % 13;	// select next channel on HEF4067 Multiplexer		
-				PORTB =  pot_mux;
+				pot_mux = (pot_mux + 1) % 16;		
+				PORTC =   pot_mux;				// select next channel on HEF4067 Multiplexer	
 	
 				if (pot_mux == 0) {				// wait! let's have al look at the strings first
 												// before going back to the pots
@@ -233,50 +261,15 @@ void checkAnlogPorts (void) {
 }
 
 
+void dummyData(void) {
+			
+											// DUMMY DATA	
+		usb_reply.string[0] = 127;
 
 
-// ==============================================================================
-// - main
-// ------------------------------------------------------------------------------
-int main(void)
-{
-	// ------------------------- Initialize Hardware
-	
-	// PORTA: AD Converter + Calibration Button on PA7
-	DDRA 	= 0x00;		// set all pins to input
-	PORTA 	= 0x00;		// make sure pull-up resistors are turned off
-	PORTA |= (1 << 7);	// pullup on calibration button
-
-	ad_Init();
-
-	//PORTB: Serial Communication + PB0..3: Channel selection on HEF4067 Multiplexer
-	DDRB = 0xBF;		// 1011 1111 - All outputs except MISO 
-	SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR1); 		//  enable SPI in Master Mode, clk = fcpu/64
-	PORTB	= 0x00;
-
-	// PORTC: Default output
-	DDRC 	= 0xff;		// set all pins to output
-	PORTC 	= 0xff;		// turn off all leds
-	
-	// PORTD: gnusbCore stuff: USB, status leds, jumper
-	initCoreHardware();
-	statusLedOn(StatusLed_Green);
-
-	// ------------------------- Main Loop
-	while(1) {
-        wdt_reset();		// reset Watchdog timer - otherwise Watchdog will reset gnusb
-		sleepIfIdle();		// go to low power mode if host computer is sleeping
-		usbPoll();			// see if there's something going on on the usb bus
-	
-		checkAnlogPorts();		// see if we've finished an analog-digital conversion
-	//	checkDigitalPorts();	// have a look at PORTB and PORTC
-	
-	
-/*												// DUMMY DATA	
-		usb_reply.string[0] = 1;
-		usb_reply.string[2] = 2;
-		usb_reply.string[3] = 3;
-		usb_reply.string[4] = 4;
+		usb_reply.string[1] = 200;
+		usb_reply.string[2] = 3000;
+		usb_reply.string[3] = 4048;
 		
 		usb_reply.joyy[0] = 10;
 		usb_reply.joyy[1] = 11;
@@ -293,9 +286,60 @@ int main(void)
 		usb_reply.speed[2] = 203;
 		usb_reply.speed[3] = 204;
 
-		dataChanged = 1;
+		usb_reply.key[0] = 101;
+		usb_reply.key[1] = 102;
+		usb_reply.key[2] = 103;
+		usb_reply.key[3] = 104;
 
-*/
+		dataChanged = 1;
+}
+
+// ==============================================================================
+// - main
+// ------------------------------------------------------------------------------
+int main(void)
+{
+	// ------------------------- Initialize Hardware
+	
+	// PORTA: AD Converter: 
+	//						PA0..3: Strings
+	//						PA4: Mux for Joysticks etc 
+	//						PA5..7: Mux for Body Pots
+	DDRA 	= 0x00;		// set all pins to input
+	PORTA 	= 0x00;		// make sure pull-up resistors are turned off
+
+	ad_Init();
+	ad_smoothing = 4;
+
+	//PORTB: 	Serial Communication 
+	//			+ PB3: PWM for Illumination
+	DDRB = 0xBF;		// 1011 1111 - All outputs except MISO 
+	SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR1); 		//  enable SPI in Master Mode, clk = fcpu/64
+	PORTB	= 0x00;
+	//TODO PWM
+
+	// PORTC: 	PC0..3 	Channel selcetion on HEF4067 Multiplexer. 
+	//			PC4..6: Channel Selection on onboard 4053 Mutliplexer
+	// 			PC7:	Calibration Button Input (tied externally to ground by resistor)
+	
+	DDRC 	= 0x7F;		// set all pins to output except PC7
+	PORTC 	= 0x00;		// make sure pull-up resistors are turned off
+	
+	// PORTD: gnusbCore stuff: USB, status leds, jumper
+	initCoreHardware();
+	statusLedOn(StatusLed_Green);
+
+	// ------------------------- Main Loop
+	while(1) {
+        wdt_reset();		// reset Watchdog timer - otherwise Watchdog will reset gnusb
+		sleepIfIdle();		// go to low power mode if host computer is sleeping
+		usbPoll();			// see if there's something going on on the usb bus
+	
+		checkAnlogPorts();		// see if we've finished an analog-digital conversion
+	//	checkDigitalPorts();	// have a look at PORTB and PORTC
+
+
+	
 		if (dataChanged && (usb_reply_next_data == 0)) {
 			usb_reply_next_data = (u08*)&usb_reply;
 			usb_reply_remain = sizeof(usb_reply);
