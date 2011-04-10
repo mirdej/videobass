@@ -149,6 +149,7 @@ void checkAnlogPorts (void) {
 
 	
 			ad_mux = (ad_mux + 1) % 8;									// advance multiplexer index
+			if (ad_mux == 5) {ad_mux = 7;}
 			ad_SetChannel(ad_mux);										// set mutliplexer channel
 			ad_samplepause = 0;											// start counting up to ADC_PAUSE in order to let the input settle a bit 
 		}
@@ -158,7 +159,7 @@ void checkAnlogPorts (void) {
 
 void checkButtons(void) {
 	u08 buttonstate;
-	buttonstate = PINB;	// sample buttons;
+	buttonstate = PINC;	// sample buttons;
 	
 	if (sentButtons == buttonstate) return;
 	dataChanged = 1;
@@ -178,7 +179,8 @@ void wait_a_second(void) {
 }
 
 void power_up(void) {
-
+// TODO
+/*
 	device_without_host = 1;
 	PORTC |= (1 << 7);		// turn on optocoupler -> power button on mac mini
 
@@ -202,6 +204,7 @@ void power_up(void) {
 		if (ad_values[7] > 500) device_without_host = 0;
 	}
 	wait_a_second();
+*/
 
 }
 
@@ -217,13 +220,13 @@ int main(void)
 	PORTA 	= 0x00;		// make sure pull-up resistors are turned off
 	ad_Init();
 
-	// PORTB: Default Input
+	// PORTB: Rotary on PB1..3, Power relay on PB0
 	DDRB 	= 0x00;		// set all pins to input
-	PORTB 	= 0xff;		// make sure pull-up resistors are turned ON
+	PORTB 	= 0x00;		// TODO
 
-	// PORTC: Default output
-	DDRC 	= 0xff;		// set all pins to output
-	PORTC 	= 0x00;		// turn off all leds
+	// PORTC: Switches & Buttons
+	DDRC 	= 0x00;		// set all pins to input
+	PORTC 	= 0xff;		// make sure pull-up resistors are turned ON
 	
 	// PORTD: gnusbCore stuff: USB, status leds, jumper
 	// initCoreHardware(); 
