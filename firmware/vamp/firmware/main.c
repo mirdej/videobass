@@ -47,6 +47,7 @@ static u08		ad_smoothing;	// smoothing level of ad samples (0 -  15)
 static u08		ad_samplepause;	// counts up to ADC_PAUSE between samples
 static u08		sentButtons;
 static u08		device_without_host;
+static u08 		old_pinb;
 
 
 static reportStruct 	usb_reply;
@@ -178,6 +179,26 @@ void wait_a_second(void) {
 	}
 }
 
+// ------------------------------------------------------------------------------
+// - Rotary Wheel
+// ------------------------------------------------------------------------------
+
+// from gnusbcoder
+signed char changeDetect(u08 before, u08 now, u08 bit) {
+	if (((now >> bit) & 3) == ((before >> bit) & 3)) return 0;
+	if (((now >> bit) & 1) == ((before >> (bit+1)) & 1)) return -1;
+	else return 1;
+}
+
+void checkRotary(void) {
+	u08 temp = PINB;
+	if (temp == old_pinb) return;
+		
+	usb_reply.wheel += changeDetect(old_pinb,temp,2);
+	dataChanged = 1;
+	old_pinb = temp;
+}
+
 void power_up(void) {
 // TODO
 /*
@@ -219,11 +240,12 @@ int main(void)
 	DDRA 	= 0x00;		// set all pins to input
 	PORTA 	= 0x00;		// make sure pull-up resistors are turned off
 	ad_Init();
+	ad_smoothing = 9;
 
 	// PORTB: Rotary on PB1..3, Power relay on PB0
-	DDRB 	= 0x00;		// set all pins to input
-	PORTB 	= 0x00;		// TODO
-
+	DDRB 	= 0x01;		// set all pins to input except PB0
+	PORTB 	= 0x0E;		// pullups for Rotary
+	
 	// PORTC: Switches & Buttons
 	DDRC 	= 0x00;		// set all pins to input
 	PORTC 	= 0xff;		// make sure pull-up resistors are turned ON
@@ -236,7 +258,7 @@ int main(void)
 	PORTD = 0x70; 	// set Pullup for Bootloader Jumper, no pullups on USB pins -> 0111 0000
 	wdt_enable(WDTO_1S);	// enable watchdog timer
 
-	wait_a_second();
+	//wait_a_second();
 	
 	// version for batiment k
 /*device_without_host = 1;
@@ -246,7 +268,14 @@ int main(void)
 	}
 	PORTC &= ~(1 << 7);	// release power button on mac mini
 */
+
+	PORTB |= 0x01; // turn on MacMini
+	//wait_a_second();
+	
 	initForUsbConnectivity();
+	
+	PORTB &= ~0x01; // releas relais
+	
 	sei();			// turn on interrupts
 
 	statusLedOn(StatusLed_Green);
@@ -261,6 +290,7 @@ int main(void)
 	
 		checkAnlogPorts();		// see if we've finished an analog-digital conversion
 		checkButtons();
+		checkRotary();
 
 		if (dataChanged && (usb_reply_next_data == 0)) {
 			usb_reply_next_data = (u08*)&usb_reply;
@@ -273,7 +303,8 @@ int main(void)
 			usb_reply_remain -= 8;
 			if (usb_reply_remain <= 0) {
 				usb_reply_next_data = 0;
-			} else {
+				usb_reply.wheel = 0;
+		} else {
 				usb_reply_next_data += 8;
 			}
 		}
