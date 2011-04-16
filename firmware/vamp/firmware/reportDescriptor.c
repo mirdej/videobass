@@ -39,9 +39,9 @@ PROGMEM char usbDescriptorHidReport[] = {
 			UsagePage2(0x09),				// Buttons
 			
 			UsageMinimum2(0x01),
-			UsageMaximum2(0x08),
+			UsageMaximum2(0x0f),
 			ReportSize2(0x01),
-			ReportCount2(0x08),
+			ReportCount2(0x0f),
 			Input2(Variable),
 
 	EndCollection1							//  --- Root Collection
@@ -51,4 +51,5 @@ typedef struct {
 	unsigned char 	pots[8];
 	signed char 	wheel;
 	char 			buttons;
+	char 			buttons2;
 } reportStruct;

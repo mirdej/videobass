@@ -195,6 +195,8 @@ void checkRotary(void) {
 	if (temp == old_pinb) return;
 		
 	usb_reply.wheel += changeDetect(old_pinb,temp,2);
+	if (~temp & (1 << 1)) { usb_reply.buttons2 |= (1 << 0);}
+	else usb_reply.buttons2 &= ~(1 << 0);
 	dataChanged = 1;
 	old_pinb = temp;
 }
