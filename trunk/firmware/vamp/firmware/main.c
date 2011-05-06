@@ -272,11 +272,11 @@ int main(void)
 */
 
 	PORTB |= 0x01; // turn on MacMini
-	//wait_a_second();
+	wait_a_second();
 	
 	initForUsbConnectivity();
 	
-	PORTB &= ~0x01; // releas relais
+	PORTB &= ~0x01; // release relais
 	
 	sei();			// turn on interrupts
 
