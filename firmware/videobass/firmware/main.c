@@ -316,7 +316,12 @@ int main(void)
 	DDRB = 0xBF;		// 1011 1111 - All outputs except MISO 
 	SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR1); 		//  enable SPI in Master Mode, clk = fcpu/64
 	PORTB	= 0x00;
-	//TODO PWM
+	//PWM For Led
+	TCCR0 |= 1 << WGM00; // Phase Correct PWM Mode
+	TCCR0 |= 1 << COM01; // Clear =C when upcounting
+	TCCR0 |= (1 << CS01); // clk/64;
+	OCR0 = 10;
+	
 
 	// PORTC: 	PC0..3 	Channel selcetion on HEF4067 Multiplexer. 
 	//			PC4..6: Channel Selection on onboard 4053 Mutliplexer
@@ -329,6 +334,8 @@ int main(void)
 	initCoreHardware();
 	statusLedOn(StatusLed_Green);
 
+unsigned int tester;
+
 	// ------------------------- Main Loop
 	while(1) {
         wdt_reset();		// reset Watchdog timer - otherwise Watchdog will reset gnusb
@@ -337,7 +344,8 @@ int main(void)
 	
 		checkAnlogPorts();		// see if we've finished an analog-digital conversion
 	//	checkDigitalPorts();	// have a look at PORTB and PORTC
-
+tester++;
+if (tester == 0) PORTB ^= 1 << 3;
 
 	
 		if (dataChanged && (usb_reply_next_data == 0)) {

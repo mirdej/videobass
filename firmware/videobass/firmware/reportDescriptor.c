@@ -87,6 +87,7 @@ PROGMEM char usbDescriptorHidReport[] = {
 			ReportSize2(0x01),
 			ReportCount2(0x08),
 			Input2(Variable),
+			
 
 	EndCollection1							//  --- Root Collection
 };											// 
