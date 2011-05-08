@@ -231,10 +231,10 @@ void checkAnlogPorts (void) {
 						pot = usb_reply.speed + (pot_mux / 4);
 						break;
 					case 2:
-						pot = usb_reply.joyy + (pot_mux / 4);
+						pot = usb_reply.joyx + (pot_mux / 4);
 						break;
 					case 3:
-						pot = usb_reply.joyx + (pot_mux / 4);
+						pot = usb_reply.joyy + (pot_mux / 4);
 						break;
 				}
 
