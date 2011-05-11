@@ -42,7 +42,7 @@
 static u08		ad_mux;			// current ad input channel
 static u08		pot_mux;			// mux counter for HEF4067 multiplexer
 
-static u16		ad_values[21];	// raw ad values
+static u16		ad_values[36];	// raw ad values
 static u08		ad_smoothing;	// smoothing level of ad samples (0 -  15)
 static u08		ad_samplepause;	// counts up to ADC_PAUSE between samples
 
@@ -52,7 +52,6 @@ static reportStruct 	usb_reply;
 static u08	 			dataChanged = 0;
 static u08*				usb_reply_next_data;
 static s08				usb_reply_remain;
-static u16				usb_request_remain;
 
 // ------------------------------------------------------------------------------
 // - utilities
@@ -204,14 +203,14 @@ void checkAnlogPorts (void) {
 			// basic low pass filter
 			ad_values[ad_mux + pot_mux] = (ad_values[ad_mux + pot_mux] * ad_smoothing + temp) / (ad_smoothing + 1);
 	
-			if (ad_mux < 4) {
+			if (ad_mux < 4) {						// Strings are on ADC 0-3
 	
 				unsigned int* string = &usb_reply.string[3 - ad_mux];
 				unsigned int oldVal = *string;
 				*string = ad_values[ad_mux];							
 				dataChanged |= *string != oldVal;
 
-				ad_mux = (ad_mux + 1) % 5;									// advance multiplexer index	
+				ad_mux++;									// advance multiplexer index	
 		
 			} else {
 				
@@ -223,32 +222,47 @@ void checkAnlogPorts (void) {
 					3	Joystick etc...
 				*/
 
-				temp = (pot_mux % 4);
-				switch (temp) {
-					case 0:			
-						pot = usb_reply.key + (pot_mux / 4);
-						break;
-					case 1:
-						pot = usb_reply.speed + (pot_mux / 4);
-						break;
-					case 2:
-						pot = usb_reply.joyx + (pot_mux / 4);
-						break;
-					case 3:
-						pot = usb_reply.joyy + (pot_mux / 4);
-						break;
+				if (pot_mux < 16 ) {
+					temp = (pot_mux % 4);
+					switch (temp) {
+						case 0:			
+							pot = usb_reply.key + (pot_mux / 4);
+							break;
+						case 1:
+							pot = usb_reply.speed + (pot_mux / 4);
+							break;
+						case 2:
+							pot = usb_reply.joyx + (pot_mux / 4);
+							break;
+						case 3:
+							pot = usb_reply.joyy + (pot_mux / 4);
+							break;
+					}
+				} else {
+					pot = usb_reply.pots + pot_mux - 16;
 				}
-
 
 				char oldVal = *pot;
 				*pot = ad_values[ad_mux + pot_mux] >> 2;							// copy 8 most significant bits to usb reply 
 				dataChanged |= *pot != oldVal;	
 
-				pot_mux = (pot_mux + 1) % 16;		
-				PORTC =   pot_mux;				// select next channel on HEF4067 Multiplexer	
+				pot_mux++;
+
+
+				if (pot_mux < 16) {
+					PORTC =   pot_mux;				// select next channel on HEF4067 Multiplexer on joystick-board
+				} else {
+													// alternate inputs on onboard 4043 Multiplexer
+					if (pot_mux == 16) {ad_mux = 6;}
+					if (pot_mux == 18) {ad_mux = 7;}
+					if (pot_mux % 2) { PORTC = 0x70; }
+					else { PORTC = 0;}
+				}
 	
-				if (pot_mux == 0) {				// wait! let's have al look at the strings first
-												// before going back to the pots
+				if (pot_mux >= 20) {				// wait! let's have al look at the strings and buttons first
+													// before going back to the pots
+					pot_mux = 0;
+					PORTC = 0;
 					ad_mux = 0;
 					checkBtns();
 				}
@@ -260,6 +274,8 @@ void checkAnlogPorts (void) {
 		}
 	}
 }
+
+/*
 
 
 void dummyData(void) {
@@ -282,7 +298,7 @@ void dummyData(void) {
 		usb_reply.joyx[2] = 22;
 		usb_reply.joyx[3] = 23;
 
-		usb_reply.speed[0] = 201;
+		usb_reply.speed[0]++;
 		usb_reply.speed[1] = 202;
 		usb_reply.speed[2] = 203;
 		usb_reply.speed[3] = 204;
@@ -292,8 +308,14 @@ void dummyData(void) {
 		usb_reply.key[2] = 103;
 		usb_reply.key[3] = 104;
 
+		usb_reply.pots[0]++;
+		usb_reply.pots[1] = 212;
+		usb_reply.pots[2] = 213;
+		usb_reply.pots[3] = 214;
+
 		dataChanged = 1;
 }
+*/
 
 // ==============================================================================
 // - main
@@ -331,8 +353,6 @@ int main(void)
 	// PORTD: gnusbCore stuff: USB, status leds, jumper
 	initCoreHardware();
 	statusLedOn(StatusLed_Green);
-
-unsigned char tester,dir;
 
 	// ------------------------- Main Loop
 	while(1) {
