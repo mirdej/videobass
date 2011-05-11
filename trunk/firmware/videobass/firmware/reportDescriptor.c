@@ -21,7 +21,7 @@ PROGMEM char usbDescriptorHidReport[] = {
 	Usage2(0x08),					// Multi axis controller
 	
 	Collection2(Application),				//  --- Root Collection
-
+			
 			Usage2(0x36),					// string slider
 			Usage2(0x36),					// string slider
 			Usage2(0x36),					// string slider
@@ -88,7 +88,6 @@ PROGMEM char usbDescriptorHidReport[] = {
 			ReportCount2(0x08),
 			Input2(Variable),
 			
-
 	EndCollection1							//  --- Root Collection
 };											// 
 

@@ -52,6 +52,7 @@ static reportStruct 	usb_reply;
 static u08	 			dataChanged = 0;
 static u08*				usb_reply_next_data;
 static s08				usb_reply_remain;
+static u16				usb_request_remain;
 
 // ------------------------------------------------------------------------------
 // - utilities
@@ -112,6 +113,7 @@ usbMsgLen_t usbFunctionSetup(u08 data[8])
 	return 0;
 }
 
+
 // ------------------------------------------------------------------------------
 // - CHECk Buttons
 // ------------------------------------------------------------------------------
@@ -138,10 +140,9 @@ void checkBtns (void) {
 	SPDR = 0xff;			// Start transmission
 
 	while (!(SPSR & (1 << SPIF))) {}	// wait for transition to finish
-	//button_state = reverseBits(SPDR);
+
 	temp = SPDR;
 	button_state = temp;//temp >> 4;
-//	button_state |= (PINA & 0xc0); // calibrate button is wired on PINA
 	
 	// again send and receive 8 bits
 	SPDR = 0xff;			// Start transmission
@@ -316,13 +317,10 @@ int main(void)
 	DDRB = 0xBF;		// 1011 1111 - All outputs except MISO 
 	SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR1); 		//  enable SPI in Master Mode, clk = fcpu/64
 	PORTB	= 0x00;
-	//PWM For Led
-	TCCR0 |= 1 << WGM00; // Phase Correct PWM Mode
-	TCCR0 |= 1 << COM01; // Clear =C when upcounting
-	TCCR0 |= (1 << CS01); // clk/64;
-	OCR0 = 10;
-	
 
+	//PWM For Led is no good idea: too much disturbance for analog mesurements. Another time...
+	TCCR0 = 0;
+	
 	// PORTC: 	PC0..3 	Channel selcetion on HEF4067 Multiplexer. 
 	//			PC4..6: Channel Selection on onboard 4053 Mutliplexer
 	// 			PC7:	Calibration Button Input (tied externally to ground by resistor)
@@ -334,7 +332,7 @@ int main(void)
 	initCoreHardware();
 	statusLedOn(StatusLed_Green);
 
-unsigned int tester;
+unsigned char tester,dir;
 
 	// ------------------------- Main Loop
 	while(1) {
@@ -343,10 +341,6 @@ unsigned int tester;
 		usbPoll();			// see if there's something going on on the usb bus
 	
 		checkAnlogPorts();		// see if we've finished an analog-digital conversion
-	//	checkDigitalPorts();	// have a look at PORTB and PORTC
-tester++;
-if (tester == 0) PORTB ^= 1 << 3;
-
 	
 		if (dataChanged && (usb_reply_next_data == 0)) {
 			usb_reply_next_data = (u08*)&usb_reply;
