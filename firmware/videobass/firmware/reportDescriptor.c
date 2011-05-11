@@ -62,12 +62,15 @@ PROGMEM char usbDescriptorHidReport[] = {
 			Usage2(0x37), 					// dial
 			Usage2(0x37), 					// dial
 			Usage2(0x37), 					// dial
+			Usage2(0x37), 					// dial
+			Usage2(0x37), 					// dial
+			Usage2(0x37), 					// dial
 			LogicalMinimum2(0x00), 
 			LogicalMaximum3(0xFF,0x00),
 			PhysicalMinimum2(-1),
 			PhysicalMaximum2(1),
 			ReportSize2(0x08), 
-			ReportCount2(0x09), 
+			ReportCount2(0x0C), 
 			Input2(Variable),
 
 			Usage2(0x38), 					//Wheel (stepper)
@@ -97,7 +100,7 @@ typedef struct {
 	unsigned char	joyy[4];
 	unsigned char 	speed[4];
 	unsigned char 	key[4];
-	unsigned char	buffer;
+	unsigned char	pots[4];
 	char 			steppers;
 	char 			buttons;
 } reportStruct;
