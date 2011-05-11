@@ -170,6 +170,11 @@ void checkBtns (void) {
 	usb_reply.buttons |= 	(button_state >> 12) & 0x08;
 	usb_reply.buttons |=	calib_state;
 	
+	usb_reply.buttons2 = 	(button_state >> 2) & 0x01;
+	usb_reply.buttons2 |= 	(button_state >> 5) & 0x02;
+	usb_reply.buttons2 |= 	(button_state >> 8) & 0x04;
+	usb_reply.buttons2 |= 	(button_state >> 11) & 0x08;
+	
 	usb_reply.steppers = 	(button_state >> 0) & 0x03;
 	usb_reply.steppers |= 	(button_state >> 2) & 0x0C;
 	usb_reply.steppers |= 	(button_state >> 4) & 0x30;
