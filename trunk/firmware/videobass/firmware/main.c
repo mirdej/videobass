@@ -47,6 +47,7 @@ static u08		ad_smoothing;	// smoothing level of ad samples (0 -  15)
 static u08		ad_samplepause;	// counts up to ADC_PAUSE between samples
 
 static u16		old_button_state;
+static u08		old_calib_state;
 
 static reportStruct 	usb_reply;
 static u08	 			dataChanged = 0;
@@ -120,7 +121,7 @@ usbMsgLen_t usbFunctionSetup(u08 data[8])
 void checkBtns (void) {
 	unsigned int shortwait;
 	unsigned int button_state;
-	unsigned char temp;
+	unsigned char calib_state;
 
 	// clock once to load buttons in serial register;
 	PORTB |= (1 << 7);
@@ -140,8 +141,7 @@ void checkBtns (void) {
 
 	while (!(SPSR & (1 << SPIF))) {}	// wait for transition to finish
 
-	temp = SPDR;
-	button_state = temp;//temp >> 4;
+	button_state = SPDR;
 	
 	// again send and receive 8 bits
 	SPDR = 0xff;			// Start transmission
@@ -149,9 +149,11 @@ void checkBtns (void) {
 	while (!(SPSR & (1 << SPIF))) {}	// wait for transition to finish
 	button_state |= SPDR << 8;
 	
-	PORTB &= ~(1 << 4); // 74x595: enable output	
+	PORTB &= ~(1 << 4); // 74x595: enable output
 	
-		if (button_state == old_button_state) return;
+	calib_state = PINC & 0x80;
+	
+	if ((button_state == old_button_state) & (calib_state == old_calib_state)) return;
 
 /*
 	The videobass2011 has the buttons wired this way
@@ -166,6 +168,7 @@ void checkBtns (void) {
 	usb_reply.buttons |= 	(button_state >> 6) & 0x02;
 	usb_reply.buttons |= 	(button_state >> 9) & 0x04;
 	usb_reply.buttons |= 	(button_state >> 12) & 0x08;
+	usb_reply.buttons |=	calib_state;
 	
 	usb_reply.steppers = 	(button_state >> 0) & 0x03;
 	usb_reply.steppers |= 	(button_state >> 2) & 0x0C;
@@ -175,6 +178,7 @@ void checkBtns (void) {
 	
 	dataChanged = 1;
 	old_button_state = button_state;
+	old_calib_state = calib_state;
 }
 
 
@@ -255,8 +259,8 @@ void checkAnlogPorts (void) {
 													// alternate inputs on onboard 4043 Multiplexer
 					if (pot_mux == 16) {ad_mux = 6;}
 					if (pot_mux == 18) {ad_mux = 7;}
-					if (pot_mux % 2) { PORTC = 0x70; }
-					else { PORTC = 0;}
+					if (pot_mux % 2) { PORTC = 0; }
+					else { PORTC = 0x70;}
 				}
 	
 				if (pot_mux >= 20) {				// wait! let's have al look at the strings and buttons first
