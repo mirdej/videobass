@@ -1163,7 +1163,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 459.0, 150.0, 321.0, 29.0 ],
-									"text" : "extended usage with symbolic page and numeric usage.\nSets 'usagepage' to 1 (Generic Desktop) and 'usage' to 6 (Gamepad)"
+									"text" : "extended usage with symbolic page and numeric usage.\nSets 'usagepage' to 1 (Generic Desktop) and 'usage' to 5 (Gamepad)"
 								}
 
 							}
@@ -1253,12 +1253,12 @@
 									"fontname" : "Arial",
 									"fontsize" : 10.0,
 									"id" : "obj-24",
-									"linecount" : 6,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 4.0, 431.0, 388.0, 75.0 ],
-									"text" : "To make it easier to specify usages, the 'usage' and 'usagepage' attributes also accept symbols instead of numerical values. These symbols and their corresponding numerical values are defined in text files called 'hi.UsagePages.txt' (for usagepage values) and 'hi.ExtendedUsages.txt' (for symbols which define a usagepage / usage pair). These files must be in your Max search path for this feature to work. You can adapt and extend the contents of these files to suit your needs."
+									"patching_rect" : [ 4.0, 431.0, 384.0, 52.0 ],
+									"text" : "To make it easier to specify usages, the 'usage' and 'usagepage' attributes also accept symbols instead of numerical values. These symbols and their corresponding numerical values are defined in an sqlite3 database file called \"hi.usagetables.db\". This file must be in your Max search path for this feature to work."
 								}
 
 							}
@@ -1897,7 +1897,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 10.0,
 					"id" : "obj-4",
-					"items" : [ "Apple Internal Keyboard / Trackpad", ",", "Apple IR", ",", "gnusbcoder", ",", "Apple Internal Keyboard / Trackpad", ",", "Apple Internal Keyboard / Trackpad", ",", "Apple Internal Keyboard / Trackpad" ],
+					"items" : [ "Apple IR", ",", "Apple Internal Keyboard / Trackpad", ",", "Apple Internal Keyboard / Trackpad", ",", "Apple Internal Keyboard / Trackpad", ",", "MF_Master", ",", "Apple Internal Keyboard / Trackpad" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,

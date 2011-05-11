@@ -22,6 +22,20 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 10.0,
+					"id" : "obj-20",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 51.0, 355.0, 32.5, 16.0 ],
+					"text" : "next"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
 					"id" : "obj-8",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -127,11 +141,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 10.0,
 					"id" : "obj-38",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 54.0, 359.0, 270.0, 18.0 ],
-					"text" : "the hi.dev we bind to; it connects to the first mouse found"
+					"patching_rect" : [ 88.0, 349.0, 270.0, 29.0 ],
+					"text" : "the hi.dev we bind to; it connects to the first mouse found. Click \"next\" to select a different mouse."
 				}
 
 			}
@@ -317,7 +332,7 @@
 					"fontsize" : 10.0,
 					"id" : "obj-11",
 					"maxclass" : "number",
-					"maximum" : 5,
+					"maximum" : 4,
 					"minimum" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -579,6 +594,15 @@
 					"hidden" : 0,
 					"midpoints" : [  ],
 					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"hidden" : 0,
+					"midpoints" : [  ],
+					"source" : [ "obj-20", 0 ]
 				}
 
 			}
