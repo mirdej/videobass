@@ -139,7 +139,12 @@ void checkAnlogPorts (void) {
 		if ( ad_ConversionComplete() ) {								// see if AD-Conversion is complete
 				
 			temp = ad_Read10bit();										// read ADC (10 bits);		
-			
+
+			if (ad_mux == 0) {											// send 0 if no pedal connected
+				if (PINA & (1 << 6)) {
+					temp = 0;
+				}
+			}
 			// basic low pass filter
 			ad_values[ad_mux] = (ad_values[ad_mux] * ad_smoothing + temp) / (ad_smoothing + 1);
 			
@@ -149,8 +154,7 @@ void checkAnlogPorts (void) {
 				dataChanged |= *pot != oldVal;	
 
 	
-			ad_mux = (ad_mux + 1) % 8;									// advance multiplexer index
-			if (ad_mux == 5) {ad_mux = 7;}
+			ad_mux = (ad_mux + 1) % 3;									// advance multiplexer index
 			ad_SetChannel(ad_mux);										// set mutliplexer channel
 			ad_samplepause = 0;											// start counting up to ADC_PAUSE in order to let the input settle a bit 
 		}
@@ -202,33 +206,12 @@ void checkRotary(void) {
 }
 
 void power_up(void) {
-// TODO
-/*
-	device_without_host = 1;
-	PORTC |= (1 << 7);		// turn on optocoupler -> power button on mac mini
-
-	
-	while(device_without_host) {
-        wdt_reset();			// reset Watchdog timer - otherwise Watchdog will reset gnusb
-		checkAnlogPorts();		// see if we've finished an analog-digital conversion
-		if (ad_values[7] > 500) device_without_host = 0;
-	}
-	
-
-	// there seems to be power, wait a second
 	wait_a_second();
-	
-	device_without_host = 1;
-	// see if we still have power
-	
-	while(device_without_host) {
-        wdt_reset();			// reset Watchdog timer - otherwise Watchdog will reset gnusb
-		checkAnlogPorts();		// see if we've finished an analog-digital conversion
-		if (ad_values[7] > 500) device_without_host = 0;
-	}
+  	PORTB |= 1;
 	wait_a_second();
-*/
-
+	wait_a_second();
+ 	PORTB &=  ~1;
+	wait_a_second();
 }
 
 // ==============================================================================
@@ -238,9 +221,9 @@ int main(void)
 {
 	// ------------------------- Initialize Hardware
 	
-	// PORTA: AD Converter
+	// PORTA: AD Converter + Pedal sens
 	DDRA 	= 0x00;		// set all pins to input
-	PORTA 	= 0x00;		// make sure pull-up resistors are turned off
+	PORTA 	= (1 << 6);		// make sure pull-up resistors are turned off except on pedal sens (PA6)
 	ad_Init();
 	ad_smoothing = 9;
 
@@ -248,9 +231,9 @@ int main(void)
 	DDRB 	= 0x01;		// set all pins to input except PB0
 	PORTB 	= 0x0E;		// pullups for Rotary
 	
-	// PORTC: Switches & Buttons
+	// PORTC: Switches & Buttons & USB Power Sens
 	DDRC 	= 0x00;		// set all pins to input
-	PORTC 	= 0xff;		// make sure pull-up resistors are turned ON
+	PORTC 	= ~(1 << 7);		// make sure pull-up resistors are turned ON except on PC7
 	
 	// PORTD: gnusbCore stuff: USB, status leds, jumper
 	// initCoreHardware(); 
@@ -259,25 +242,15 @@ int main(void)
 	DDRD = 0xe0; 	// 1110 0000 -> set PD0..PD4 to inputs -> USB pins
 	PORTD = 0x70; 	// set Pullup for Bootloader Jumper, no pullups on USB pins -> 0111 0000
 	wdt_enable(WDTO_1S);	// enable watchdog timer
-
-	//wait_a_second();
 	
-	// version for batiment k
-/*device_without_host = 1;
-	
-	while(device_without_host) {
+	while((PINC & (1 << 7)) == 0) {
 		power_up();
 	}
-	PORTC &= ~(1 << 7);	// release power button on mac mini
-*/
 
-	PORTB |= 0x01; // turn on MacMini
 	wait_a_second();
 	
 	initForUsbConnectivity();
-	
-	PORTB &= ~0x01; // release relais
-	
+
 	sei();			// turn on interrupts
 
 	statusLedOn(StatusLed_Green);
