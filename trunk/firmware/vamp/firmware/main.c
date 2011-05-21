@@ -187,11 +187,18 @@ void wait_a_second(void) {
 // - Rotary Wheel
 // ------------------------------------------------------------------------------
 
-// from gnusbcoder
 signed char changeDetect(u08 before, u08 now, u08 bit) {
-	if (((now >> bit) & 3) == ((before >> bit) & 3)) return 0;
-	if (((now >> bit) & 1) == ((before >> (bit+1)) & 1)) return -1;
-	else return 1;
+	if ((now & ~before & (1 << 2))) {
+		if (now & (1 << 3))  return -1;
+		return 1;
+ 	}
+	if ((~now & before & (1 << 2))) {
+		if (now & (1 << 3))  return 1;
+		return -1;
+ 	}
+ 	
+	return 0;
+
 }
 
 void checkRotary(void) {
@@ -199,8 +206,8 @@ void checkRotary(void) {
 	if (temp == old_pinb) return;
 		
 	usb_reply.wheel += changeDetect(old_pinb,temp,2);
-	if (~temp & (1 << 1)) { usb_reply.buttons2 |= (1 << 0);}
-	else usb_reply.buttons2 &= ~(1 << 0);
+	if (temp & (1 << 1)) { usb_reply.buttons2 &= ~(1 << 0);}
+	else usb_reply.buttons2 |= (1 << 0);
 	dataChanged = 1;
 	old_pinb = temp;
 }
