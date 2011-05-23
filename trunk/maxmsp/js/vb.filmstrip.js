@@ -1,10 +1,11 @@
 // inlets and outlets
 inlets = 1;
-outlets = 3;
+outlets = 4;
 
 o_matrix 		= 0;
 o_matrixset 	= 1;
 o_messages 		= 2;
+o_bang	 		= 3;
 
 var main_height = 210;
 var main_width;
@@ -128,6 +129,7 @@ function set_clip(idx,path) {
 		
 		outlet(o_matrix, "jit_matrix", filmstrip_matrix.name);
 		outlet(o_matrix,'bang');
+		outlet(o_bang,'bang');
 }
 
 function clear() {
