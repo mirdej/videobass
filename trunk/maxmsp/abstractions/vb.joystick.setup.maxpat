@@ -23,26 +23,24 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"maxclass" : "bpatcher",
-					"args" : [ 2 ],
 					"patching_rect" : [ 318.333344, 8.0, 276.0, 367.0 ],
-					"id" : "obj-9",
-					"name" : "vb.zone.ui.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"presentation_rect" : [ 521.0, 433.0, 0.0, 0.0 ]
+					"args" : [ 2 ],
+					"id" : "obj-9",
+					"name" : "vb.zone.ui.maxpat"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"maxclass" : "bpatcher",
-					"args" : [ 4 ],
 					"patching_rect" : [ 894.333313, 8.0, 276.0, 367.0 ],
-					"id" : "obj-10",
-					"name" : "vb.zone.ui.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"presentation_rect" : [ 521.0, 705.0, 0.0, 0.0 ]
+					"args" : [ 4 ],
+					"id" : "obj-10",
+					"name" : "vb.zone.ui.maxpat"
 				}
 
 			}
@@ -51,11 +49,11 @@
 					"maxclass" : "newobj",
 					"text" : "s update_hi_values",
 					"patching_rect" : [ 144.0, 447.0, 114.0, 20.0 ],
-					"fontsize" : 12.0,
-					"id" : "obj-8",
-					"hidden" : 1,
 					"numinlets" : 1,
+					"fontsize" : 12.0,
+					"hidden" : 1,
 					"numoutlets" : 0,
+					"id" : "obj-8",
 					"fontname" : "Arial"
 				}
 
@@ -64,13 +62,13 @@
 				"box" : 				{
 					"maxclass" : "newobj",
 					"text" : "delay 1000",
-					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 263.0, 409.0, 69.0, 20.0 ],
-					"fontsize" : 12.0,
-					"id" : "obj-7",
-					"hidden" : 1,
 					"numinlets" : 2,
+					"fontsize" : 12.0,
+					"hidden" : 1,
 					"numoutlets" : 1,
+					"id" : "obj-7",
+					"outlettype" : [ "bang" ],
 					"fontname" : "Arial"
 				}
 
@@ -79,13 +77,13 @@
 				"box" : 				{
 					"maxclass" : "newobj",
 					"text" : "loadbang",
-					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 263.0, 386.0, 60.0, 20.0 ],
-					"fontsize" : 12.0,
-					"id" : "obj-5",
-					"hidden" : 1,
 					"numinlets" : 1,
+					"fontsize" : 12.0,
+					"hidden" : 1,
 					"numoutlets" : 1,
+					"id" : "obj-5",
+					"outlettype" : [ "bang" ],
 					"fontname" : "Arial"
 				}
 
@@ -95,11 +93,11 @@
 					"maxclass" : "newobj",
 					"text" : "s vb_load_settings",
 					"patching_rect" : [ 263.0, 447.0, 110.0, 20.0 ],
-					"fontsize" : 12.0,
-					"id" : "obj-4",
-					"hidden" : 1,
 					"numinlets" : 1,
+					"fontsize" : 12.0,
+					"hidden" : 1,
 					"numoutlets" : 0,
+					"id" : "obj-4",
 					"fontname" : "Arial"
 				}
 
@@ -108,13 +106,13 @@
 				"box" : 				{
 					"maxclass" : "newobj",
 					"text" : "hi.dev vb www.anyma.ch videobass",
-					"outlettype" : [ "" ],
 					"patching_rect" : [ 565.0, 426.0, 200.0, 20.0 ],
-					"fontsize" : 12.0,
-					"id" : "obj-3",
-					"hidden" : 1,
 					"numinlets" : 1,
+					"fontsize" : 12.0,
+					"hidden" : 1,
 					"numoutlets" : 1,
+					"id" : "obj-3",
+					"outlettype" : [ "" ],
 					"fontname" : "Arial"
 				}
 
@@ -122,24 +120,24 @@
 , 			{
 				"box" : 				{
 					"maxclass" : "bpatcher",
-					"args" : [ 1 ],
 					"patching_rect" : [ 30.0, 8.0, 276.0, 367.0 ],
-					"id" : "obj-2",
-					"name" : "vb.zone.ui.maxpat",
 					"numinlets" : 0,
-					"numoutlets" : 0
+					"numoutlets" : 0,
+					"args" : [ 1 ],
+					"id" : "obj-2",
+					"name" : "vb.zone.ui.maxpat"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"maxclass" : "bpatcher",
-					"args" : [ 3 ],
 					"patching_rect" : [ 606.333313, 8.0, 276.0, 367.0 ],
-					"id" : "obj-1",
-					"name" : "vb.zone.ui.maxpat",
 					"numinlets" : 0,
-					"numoutlets" : 0
+					"numoutlets" : 0,
+					"args" : [ 3 ],
+					"id" : "obj-1",
+					"name" : "vb.zone.ui.maxpat"
 				}
 
 			}
@@ -147,9 +145,9 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"source" : [ "obj-7", 0 ],
-					"destination" : [ "obj-8", 0 ],
+					"destination" : [ "obj-4", 0 ],
 					"hidden" : 1,
-					"midpoints" : [ 272.5, 437.5, 153.5, 437.5 ]
+					"midpoints" : [ 272.5, 434.0, 272.5, 434.0 ]
 				}
 
 			}
@@ -165,9 +163,9 @@
 , 			{
 				"patchline" : 				{
 					"source" : [ "obj-7", 0 ],
-					"destination" : [ "obj-4", 0 ],
+					"destination" : [ "obj-8", 0 ],
 					"hidden" : 1,
-					"midpoints" : [ 272.5, 434.0, 272.5, 434.0 ]
+					"midpoints" : [ 272.5, 437.5, 153.5, 437.5 ]
 				}
 
 			}

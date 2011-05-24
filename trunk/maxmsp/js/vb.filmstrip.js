@@ -72,7 +72,7 @@ function add_clip(path) {
 
 		clip_count++;
 		outlet(o_messages,'count',clip_count);
-		outlet(o_messages,'adding',path);
+		outlet(o_messages,'message','Adding Clip:',path);
 		
 // backup old filmstrip
 		filmstrip_backup.dim = filmstrip_matrix.dim;
