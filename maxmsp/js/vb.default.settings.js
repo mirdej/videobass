@@ -10,13 +10,21 @@ function setting (name,setting) {
 
 function paths(p,home) {
 	var i;
+
+
 	preferences_path = p + "/";
+
+	setting ("camera_crop",							"0 0 639 479")
+	setting ("camera_flip",							"0")
+	setting ("camera_focus",						"0.5")
+	setting ("camera_hue",							"0.5")
 
 	setting ("pedal_pad",							"5")
 	setting ("strings_flipback_time",				"2000")
 	setting ("strings_release_recovery",			"200")
 	setting ("clip_path",							home+"Videobass Clips")
 	setting ("rec_path",							home+"Videobass Recordings")
+	setting ("rec_slots",							"20")
 
 
 	for (i=1;i<13;i++) {	setting ("dial_"+i+"_center",			"128")	}
