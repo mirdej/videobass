@@ -18,6 +18,12 @@ function paths(p,home) {
 	setting ("camera_flip",							"0")
 	setting ("camera_focus",						"0.5")
 	setting ("camera_hue",							"0.5")
+	
+	setting ("joysticks_cut_speed",							"24.")
+	setting ("joysticks_fade_speed",							"127.")
+	setting ("camera_hue",							"0.5")
+	
+	setting ("fullscreen",							"1")
 
 	setting ("pedal_pad",							"5")
 	setting ("strings_flipback_time",				"2000")
