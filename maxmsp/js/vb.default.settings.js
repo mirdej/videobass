@@ -37,7 +37,7 @@ function paths(p,home) {
 	for (i=1;i<5;i++) {		setting ("joystick_"+i+"_center_x",		"128")	}
 	for (i=1;i<5;i++) {		setting ("joystick_"+i+"_center_y",		"128")	}
 	for (i=1;i<5;i++) {		setting ("joystick_"+i+"_zone_1",		"0 0.000 1.200 0.500")	}
-	for (i=1;i<5;i++) {		setting ("joystick_"+i+"_zone_2",		"0 0.000 1.200 0.500")	}
+	for (i=1;i<5;i++) {		setting ("joystick_"+i+"_zone_2",		"1 1.571 1.200 0.500 ")	}
 	for (i=1;i<5;i++) {		setting ("joystick_"+i+"_zone_3",		"2 -1.571 1.200 0.500")	}
 	for (i=1;i<5;i++) {		setting ("joystick_"+i+"_zone_4",		"3 -3.142 1.200 0.500")	}
 	for (i=1;i<5;i++) {		setting ("string_"+i+"_hi_thresh",		"630")	}
