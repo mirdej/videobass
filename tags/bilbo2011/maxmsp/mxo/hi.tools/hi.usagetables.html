@@ -1,0 +1,4674 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>hi.tools Usage Tables</title>
+		<style type="text/css">
+			table { border: thin solid black; border-collapse: collapse; }
+			td, th { border: thin solid black; padding: 0px 10px; }
+			th { background-color: #eee; }
+		</style>
+	</head>
+	<body>
+		<h1>Usage Tables</h1>
+		<hr />
+		<p>This file list the contents of the hi.tools usage tables database. Wherever a usage
+		or usage page has to be specified, the symbol from either the Name or Alias column of
+		the following tables can be given instead of the numeric values. These symbols are
+		case-insensitive.</p>
+		<p>You may also modify the sqlite3 file "hi.usagetables.db" to define your own aliases
+		(e. g. with the sqlite3 command-line utility). If you do so, take care to backup your
+		modified database file before upgrading the hi.tools!</p>
+		<p>A python script to generate this file from the database file is included in the
+		hi.tools source distribution.</p>
+		<hr />
+		<h2>Usage Pages</h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td><a href="#page1">1</a></td>
+					<td><a href="#page1">Generic Desktop</a></td>
+					<td><a href="#page1">desktop</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page2">2</a></td>
+					<td><a href="#page2">Simulation Controls</a></td>
+					<td><a href="#page2">sim</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page3">3</a></td>
+					<td><a href="#page3">VR Controls</a></td>
+					<td><a href="#page3">vr</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page4">4</a></td>
+					<td><a href="#page4">Sports Controls</a></td>
+					<td><a href="#page4">sports</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page5">5</a></td>
+					<td><a href="#page5">Gaming Controls</a></td>
+					<td><a href="#page5">gaming</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page7">7</a></td>
+					<td><a href="#page7">Keyboard</a></td>
+					<td><a href="#page7">kbd</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page8">8</a></td>
+					<td><a href="#page8">LEDs</a></td>
+					<td><a href="#page8">leds</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page9">9</a></td>
+					<td><a href="#page9">Button</a></td>
+					<td><a href="#page9">button</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page10">10</a></td>
+					<td><a href="#page10">Ordinals</a></td>
+					<td><a href="#page10">n</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page11">11</a></td>
+					<td><a href="#page11">Telephony Devices</a></td>
+					<td><a href="#page11">tele</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page12">12</a></td>
+					<td><a href="#page12">Consumer Devices</a></td>
+					<td><a href="#page12">consume</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page13">13</a></td>
+					<td><a href="#page13">Digitizers</a></td>
+					<td><a href="#page13">digit</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page16">16</a></td>
+					<td><a href="#page16">Unicode</a></td>
+					<td><a href="#page16">unicode</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page20">20</a></td>
+					<td><a href="#page20">Alphnumeric Display</a></td>
+					<td><a href="#page20">andisp</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page128">128</a></td>
+					<td><a href="#page128">Monitor</a></td>
+					<td><a href="#page128">monitor</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page129">129</a></td>
+					<td><a href="#page129">Monitor Enumerated Values</a></td>
+					<td><a href="#page129">mon_enum</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page130">130</a></td>
+					<td><a href="#page130">VESA Virtual Controls</a></td>
+					<td><a href="#page130">vesavc</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page131">131</a></td>
+					<td><a href="#page131">VESA Command</a></td>
+					<td><a href="#page131">vesacmnd</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page132">132</a></td>
+					<td><a href="#page132">Power Device</a></td>
+					<td><a href="#page132">pwrdev</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page133">133</a></td>
+					<td><a href="#page133">Battery System</a></td>
+					<td><a href="#page133">batsys</a></td>
+				</tr>
+				<tr>
+					<td><a href="#page65280">65280</a></td>
+					<td><a href="#page65280">Vendor Defined Page 1</a></td>
+					<td><a href="#page65280">vendor1</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page1">Generic Desktop (1)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>Pointer</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Mouse</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Reserved</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Joystick</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Game Pad</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Keyboard</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Keypad</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>48</td>
+					<td>X</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>49</td>
+					<td>Y</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>50</td>
+					<td>Z</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>51</td>
+					<td>Rx</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>52</td>
+					<td>Ry</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>53</td>
+					<td>Rz</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>54</td>
+					<td>Slider</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>55</td>
+					<td>Dial</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>56</td>
+					<td>Wheel</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>57</td>
+					<td>Hat switch</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>58</td>
+					<td>Counted Buffer</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>59</td>
+					<td>Byte Count</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>60</td>
+					<td>Motion Wakeup</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>64</td>
+					<td>Vx</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>65</td>
+					<td>Vy</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>66</td>
+					<td>Vz</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>67</td>
+					<td>Vbrx</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>68</td>
+					<td>Vbry</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>69</td>
+					<td>Vbrx</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>70</td>
+					<td>Vno</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>128</td>
+					<td>System Control</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>129</td>
+					<td>System Power Down</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>130</td>
+					<td>System Sleep</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>131</td>
+					<td>System Wake Up</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>132</td>
+					<td>System Context Menu</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>133</td>
+					<td>System Main Menu</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>134</td>
+					<td>System App Menu</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>135</td>
+					<td>System Help Menu</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>136</td>
+					<td>System Menu Exit</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>137</td>
+					<td>System Menu Select</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>138</td>
+					<td>System Menu Right</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>139</td>
+					<td>System Menu Left</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>140</td>
+					<td>System Menu Up</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>141</td>
+					<td>System Menu Down</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page2">Simulation Controls (2)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>Flight Simulation Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Automobile Simulation Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Tank Simulation Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Spaceship Simulation Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Submarine Simulation Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Sailing Simulation Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Motorcycle Simulation Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Sports Simulation Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Airplane Simulation Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>Helicopter Simulation Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>Magic Carpet Simulation Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>Bicycle</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>32</td>
+					<td>Flight Control Stick</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>33</td>
+					<td>Flight Stick</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>34</td>
+					<td>Cyclic Control</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>35</td>
+					<td>Cyclic Trim</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>36</td>
+					<td>Flight Yoke</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>37</td>
+					<td>Track Control</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>38</td>
+					<td>Driving Control</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>176</td>
+					<td>Aileron</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>177</td>
+					<td>Aileron Trim</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>178</td>
+					<td>Anti-Torque Control</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>179</td>
+					<td>Auto-pilot enable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>180</td>
+					<td>Chaff Release</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>181</td>
+					<td>Collective Control</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>182</td>
+					<td>Dive Brake</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>183</td>
+					<td>Electronic Counter Measures</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>184</td>
+					<td>Elevator</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>185</td>
+					<td>Elevator Trim</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>186</td>
+					<td>Rudder</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>187</td>
+					<td>Throttle</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>188</td>
+					<td>Flight Communication</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>189</td>
+					<td>Flare Release</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>190</td>
+					<td>Landing Gear</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>191</td>
+					<td>Toe Brake</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>192</td>
+					<td>Trigger</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>193</td>
+					<td>Weapons Arm</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>194</td>
+					<td>Weapons Select</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>195</td>
+					<td>Wing Flaps</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>196</td>
+					<td>Accelerator</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>197</td>
+					<td>Brake</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>198</td>
+					<td>Clutch</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>199</td>
+					<td>Shifter</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td>Steering</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>201</td>
+					<td>Turret Direction</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>202</td>
+					<td>Barrel Elevation</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>203</td>
+					<td>Dive Plane</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>204</td>
+					<td>Ballast</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>205</td>
+					<td>Bicycle Crank</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>206</td>
+					<td>Handle Bars</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>207</td>
+					<td>Front Brake</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>208</td>
+					<td>Rear Brake</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page3">VR Controls (3)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>0</td>
+					<td>Unidentified</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Belt</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Body Suit</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Flexor</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Glove</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Head Tracker</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Head Mounted Display</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Hand Tracker</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Oculometer</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Vest</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>Animatronic Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>32</td>
+					<td>Stereo Enable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>33</td>
+					<td>Display Enable</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page4">Sports Controls (4)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>0</td>
+					<td>Unidentified</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Baseball Bat</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Golf Club</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Rowing Machine</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Treadmill</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>48</td>
+					<td>Oar</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>49</td>
+					<td>Slope</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>50</td>
+					<td>Rate</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>51</td>
+					<td>Stick Speed</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>52</td>
+					<td>Stick Face Angle</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>53</td>
+					<td>Stick Heel/Toe</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>54</td>
+					<td>Stick Follow Through</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>55</td>
+					<td>Stick Tempo</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>56</td>
+					<td>Stick Type</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>57</td>
+					<td>Stick Height</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>80</td>
+					<td>Putter</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>81</td>
+					<td>1 Iron</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>82</td>
+					<td>2 Iron</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>83</td>
+					<td>3 Iron</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>84</td>
+					<td>4 Iron</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>85</td>
+					<td>5 Iron</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>86</td>
+					<td>6 Iron</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>87</td>
+					<td>7 Iron</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>88</td>
+					<td>8 Iron</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>89</td>
+					<td>9 Iron</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>89</td>
+					<td>10 Iron</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>90</td>
+					<td>11 Iron</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>91</td>
+					<td>Sand Wedge</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>92</td>
+					<td>Loft Wedge</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>93</td>
+					<td>Power Wedge</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>94</td>
+					<td>1 Wood</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>95</td>
+					<td>3 Wood</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>96</td>
+					<td>5 Wood</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>97</td>
+					<td>7 Wood</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>98</td>
+					<td>9 Wood</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page5">Gaming Controls (5)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>3D Game Controller</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Pinball Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Gun Device</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>32</td>
+					<td>Point of View</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>33</td>
+					<td>Turn Right/Left</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>34</td>
+					<td>Pitch Right/Left</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>35</td>
+					<td>Roll Forward/Backward</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>36</td>
+					<td>Move Right/Left</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>37</td>
+					<td>Move Forward/Backward</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>38</td>
+					<td>Move Up/Down</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>39</td>
+					<td>Lean Right/Left</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>40</td>
+					<td>Lean Forward/Backward</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>41</td>
+					<td>Height of POV</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>42</td>
+					<td>Flipper</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>43</td>
+					<td>Secondary Flipper</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>44</td>
+					<td>Bump</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>45</td>
+					<td>New Game</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>46</td>
+					<td>Shoot Ball</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>47</td>
+					<td>Player</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>48</td>
+					<td>Gun Bolt</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>49</td>
+					<td>Gun Clip</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>50</td>
+					<td>Gun Selector</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>51</td>
+					<td>Gun Single Shot</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>52</td>
+					<td>Gun Burst</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>53</td>
+					<td>Gun Automatic</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>54</td>
+					<td>Gun Safety</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page7">Keyboard (7)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>0</td>
+					<td>Reserved (no event indicated)</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Keyboard ErrorRollOver</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Keyboard POSTFail</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Keyboard ErrorUndefine</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Keyboard a and A</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Keyboard b and B</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Keyboard c and C</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Keyboard d and D</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Keyboard e and E</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Keyboard f and F</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>Keyboard g and G</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>Keyboard h and H</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>Keyboard i and I</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>Keyboard j and J</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>Keyboard k and K</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>Keyboard l and L</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<td>Keyboard m and M</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>Keyboard n and N</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<td>Keyboard o and O</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>19</td>
+					<td>Keyboard p and P</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>20</td>
+					<td>Keyboard q and Q</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>21</td>
+					<td>Keyboard r and R</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>22</td>
+					<td>Keyboard s and S</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>23</td>
+					<td>Keyboard t and T</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>24</td>
+					<td>Keyboard u and U</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>25</td>
+					<td>Keyboard v and V</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>26</td>
+					<td>Keyboard w and W</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>27</td>
+					<td>Keyboard x and X</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>28</td>
+					<td>Keyboard y and Y</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>29</td>
+					<td>Keyboard z and Z</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>30</td>
+					<td>Keyboard 1 and !</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>31</td>
+					<td>Keyboard 2 and @</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>32</td>
+					<td>Keyboard 3 and #</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>33</td>
+					<td>Keyboard 4 and $</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>34</td>
+					<td>Keyboard 5 and %</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>35</td>
+					<td>Keyboard 6 and ^</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>36</td>
+					<td>Keyboard 7 and &</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>37</td>
+					<td>Keyboard 8 and *</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>38</td>
+					<td>Keyboard 9 and (</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>39</td>
+					<td>Keyboard 0 and )</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>40</td>
+					<td>Keyboard Return (ENTER)</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>41</td>
+					<td>Keyboard ESCAPE</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>42</td>
+					<td>Keyboard DELETE (Backspace)</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>43</td>
+					<td>Keyboard Tab</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>44</td>
+					<td>Keyboard Spacebar</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>45</td>
+					<td>Keyboard - and (underscore)</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>46</td>
+					<td>Keyboard = and +</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>47</td>
+					<td>Keyboard [ and {</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>48</td>
+					<td>Keyboard ] and }</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>49</td>
+					<td>Keyboard \ and |</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>50</td>
+					<td>Keyboard Non-US # and ~</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>51</td>
+					<td>Keyboard ; and :</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>52</td>
+					<td>Keyboard ' and "</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>53</td>
+					<td>Keyboard Grave Accent and Tilde</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>54</td>
+					<td>Keyboard, and <</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>55</td>
+					<td>Keyboard . and ></td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>56</td>
+					<td>Keyboard / and ?</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>57</td>
+					<td>Keyboard Caps Lock</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>58</td>
+					<td>Keyboard F1</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>59</td>
+					<td>Keyboard F2</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>60</td>
+					<td>Keyboard F3</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>61</td>
+					<td>Keyboard F4</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>62</td>
+					<td>Keyboard F5</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>63</td>
+					<td>Keyboard F6</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>64</td>
+					<td>Keyboard F7</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>65</td>
+					<td>Keyboard F8</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>66</td>
+					<td>Keyboard F9</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>67</td>
+					<td>Keyboard F10</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>68</td>
+					<td>Keyboard F11</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>69</td>
+					<td>Keyboard F12</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>70</td>
+					<td>Keyboard PrintScreen</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>71</td>
+					<td>Keyboard Scroll Lock</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>72</td>
+					<td>Keyboard Pause</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>73</td>
+					<td>Keyboard Insert</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>74</td>
+					<td>Keyboard Home</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>75</td>
+					<td>Keyboard PageUp</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>76</td>
+					<td>Keyboard Delete Forward</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>77</td>
+					<td>Keyboard End</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>78</td>
+					<td>Keyboard PageDown</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>79</td>
+					<td>Keyboard RightArrow</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>80</td>
+					<td>Keyboard LeftArrow</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>81</td>
+					<td>Keyboard DownArrow</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>82</td>
+					<td>Keyboard UpArrow</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>83</td>
+					<td>Keypad Num Lock and Clear</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>84</td>
+					<td>Keypad /</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>85</td>
+					<td>Keypad *</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>86</td>
+					<td>Keypad -</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>87</td>
+					<td>Keypad +</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>88</td>
+					<td>Keypad ENTER</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>89</td>
+					<td>Keypad 1 and End</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>90</td>
+					<td>Keypad 2 and Down Arrow</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>91</td>
+					<td>Keypad 3 and PageDn</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>92</td>
+					<td>Keypad 4 and Left Arrow</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>93</td>
+					<td>Keypad 5</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>94</td>
+					<td>Keypad 6 and Right Arrow</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>95</td>
+					<td>Keypad 7 and Home</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>96</td>
+					<td>Keypad 8 and Up Arrow</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>97</td>
+					<td>Keypad 9 and PageUp</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>98</td>
+					<td>Keypad 0 and Insert</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>99</td>
+					<td>Keypad . and Delete</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>100</td>
+					<td>Keyboard Non-US \ and |</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>101</td>
+					<td>Keyboard Application</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>102</td>
+					<td>Keyboard Power</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>103</td>
+					<td>Keypad =</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>104</td>
+					<td>Keyboard F13</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>105</td>
+					<td>Keyboard F14</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>106</td>
+					<td>Keyboard F15</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>107</td>
+					<td>Keyboard F16</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>108</td>
+					<td>Keyboard F17</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>109</td>
+					<td>Keyboard F18</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>110</td>
+					<td>Keyboard F19</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>111</td>
+					<td>Keyboard F20</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>112</td>
+					<td>Keyboard F21</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>113</td>
+					<td>Keyboard F22</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>114</td>
+					<td>Keyboard F23</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>115</td>
+					<td>Keyboard F24</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>116</td>
+					<td>Keyboard Execute</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>117</td>
+					<td>Keyboard Help</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>118</td>
+					<td>Keyboard Menu</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>119</td>
+					<td>Keyboard Select</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>120</td>
+					<td>Keyboard Stop</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>121</td>
+					<td>Keyboard Again</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>122</td>
+					<td>Keyboard Undo</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>123</td>
+					<td>Keyboard Cut</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>124</td>
+					<td>Keyboard Copy</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>125</td>
+					<td>Keyboard Paste</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>126</td>
+					<td>Keyboard Find</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>127</td>
+					<td>Keyboard Mute</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>128</td>
+					<td>Keyboard Volume Up</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>129</td>
+					<td>Keyboard Volume Down</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>130</td>
+					<td>Keyboard Locking Caps Lock</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>131</td>
+					<td>Keyboard Locking Num Lock</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>132</td>
+					<td>Keyboard Locking Scroll Lock</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>133</td>
+					<td>Keypad Comma</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>134</td>
+					<td>Keypad Equal Sign</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>135</td>
+					<td>Keyboard Kanji1</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>136</td>
+					<td>Keyboard Kanji2</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>137</td>
+					<td>Keyboard Kanji3</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>138</td>
+					<td>Keyboard Kanji4</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>139</td>
+					<td>Keyboard Kanji5</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>140</td>
+					<td>Keyboard Kanji6</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>141</td>
+					<td>Keyboard Kanji7</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>142</td>
+					<td>Keyboard Kanji8</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>143</td>
+					<td>Keyboard Kanji9</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>144</td>
+					<td>Keyboard LANG1</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>145</td>
+					<td>Keyboard LANG2</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>146</td>
+					<td>Keyboard LANG3</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>147</td>
+					<td>Keyboard LANG4</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>148</td>
+					<td>Keyboard LANG5</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>149</td>
+					<td>Keyboard LANG6</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>150</td>
+					<td>Keyboard LANG7</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>151</td>
+					<td>Keyboard LANG8</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>152</td>
+					<td>Keyboard LANG9</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>153</td>
+					<td>Keyboard Alternate Erase</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>154</td>
+					<td>Keyboard SysReq/Attention</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>155</td>
+					<td>Keyboard Cancel</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>156</td>
+					<td>Keyboard Clear</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>157</td>
+					<td>Keyboard Prior</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>158</td>
+					<td>Keyboard Return</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>159</td>
+					<td>Keyboard Separator</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>160</td>
+					<td>Keyboard Out</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>161</td>
+					<td>Keyboard Oper</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>162</td>
+					<td>Keyboard Clear/Again</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>163</td>
+					<td>Keyboard CrSel/Props</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>164</td>
+					<td>Keyboard ExSel</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>224</td>
+					<td>Keyboard LeftControl</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>225</td>
+					<td>Keyboard LeftShift</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>226</td>
+					<td>Keyboard LeftAlt</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>227</td>
+					<td>Keyboard Left GUI</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>228</td>
+					<td>Keyboard RightControl</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>229</td>
+					<td>Keyboard RightShift</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>230</td>
+					<td>Keyboard RightAlt</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>231</td>
+					<td>Keyboard Right GUI</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page8">LEDs (8)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>Num Lock</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Caps Lock</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Scroll Lock</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Compose</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Kana</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Power</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Shift</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Do Not Disturb</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Mute</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>Tone Enable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>High Cut Filter</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>Low Cut Filter</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>Equalizer Enable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>Sound Field On</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>Surround field On</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<td>Repeat</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>Stereo</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<td>Sampling Rate Detect</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>19</td>
+					<td>Spinning</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>20</td>
+					<td>CAV</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>21</td>
+					<td>CLV</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>22</td>
+					<td>Recording Format Detect</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>23</td>
+					<td>Off-Hook</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>24</td>
+					<td>Ring</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>25</td>
+					<td>Message Waiting</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>26</td>
+					<td>Data Mode</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>27</td>
+					<td>Battery Operation</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>28</td>
+					<td>Battery OK</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>29</td>
+					<td>Battery Low</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>30</td>
+					<td>Speaker</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>31</td>
+					<td>Head Set</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>32</td>
+					<td>Hold</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>33</td>
+					<td>Microphone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>34</td>
+					<td>Coverage</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>35</td>
+					<td>Night Mode</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>36</td>
+					<td>Send Calls</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>37</td>
+					<td>Call Pickup</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>38</td>
+					<td>Conference</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>39</td>
+					<td>Stand-by</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>40</td>
+					<td>Camera On</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>41</td>
+					<td>Camera Off</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>42</td>
+					<td>On-Line</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>43</td>
+					<td>Off-Line</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>44</td>
+					<td>Busy</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>45</td>
+					<td>Ready</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>46</td>
+					<td>Paper-Out</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>47</td>
+					<td>Paper-Jam</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>48</td>
+					<td>Remote</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>49</td>
+					<td>Forward</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>50</td>
+					<td>Reverse</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>51</td>
+					<td>Stop</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>52</td>
+					<td>Rewind</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>53</td>
+					<td>Fast Forward</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>54</td>
+					<td>Play</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>55</td>
+					<td>Pause</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>56</td>
+					<td>Record</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>57</td>
+					<td>Error</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>58</td>
+					<td>Usage Selected Indicator</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>59</td>
+					<td>Usage In Use Indicator</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>60</td>
+					<td>Usage Multi Mode Indicator</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>61</td>
+					<td>Indicator On</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>62</td>
+					<td>Indicator Flash</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>63</td>
+					<td>Indicator Slow Blink</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>64</td>
+					<td>Indicator Fast Blink</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>65</td>
+					<td>Indicator Off</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>66</td>
+					<td>Flash On Time</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>67</td>
+					<td>Slow Blink On Time</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>68</td>
+					<td>Slow Blink Off Time</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>69</td>
+					<td>Fast Blink On Time</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>70</td>
+					<td>Fast Blink Off Time</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>71</td>
+					<td>Usage Indicator Color</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>72</td>
+					<td>Red</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>73</td>
+					<td>Green</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>74</td>
+					<td>Amber</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>75</td>
+					<td>Generic Indicator</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page9">Button (9)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page10">Ordinals (10)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page11">Telephony Devices (11)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>Phone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Answering Machine</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Message Controls</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Handset</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Headset</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Telephony Key Pad</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Programmable Button</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>32</td>
+					<td>Hook Switch</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>33</td>
+					<td>Flash</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>34</td>
+					<td>Feature</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>35</td>
+					<td>Hold</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>36</td>
+					<td>Redial</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>37</td>
+					<td>Transfer</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>38</td>
+					<td>Drop</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>39</td>
+					<td>Park</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>40</td>
+					<td>Forward Calls</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>41</td>
+					<td>Alternate Function</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>42</td>
+					<td>Line</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>43</td>
+					<td>Speaker Phone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>44</td>
+					<td>Conference</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>45</td>
+					<td>Ring Enable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>46</td>
+					<td>Ring Select</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>47</td>
+					<td>Phone Mute</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>48</td>
+					<td>Caller ID</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>80</td>
+					<td>Speed Dial</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>81</td>
+					<td>Store Number</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>82</td>
+					<td>Recall Number</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>83</td>
+					<td>Phone Directory</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>112</td>
+					<td>Voice Mail</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>113</td>
+					<td>Screen Calls</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>114</td>
+					<td>Do Not Disturb</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>115</td>
+					<td>Message</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>116</td>
+					<td>Answer On/Off</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>144</td>
+					<td>Inside Dial Tone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>145</td>
+					<td>Outside Dial Tone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>146</td>
+					<td>Inside Ring Tone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>147</td>
+					<td>Outside Ring Tone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>148</td>
+					<td>Priority Ring Tone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>149</td>
+					<td>Inside Ringback</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>150</td>
+					<td>Priority Ringback</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>151</td>
+					<td>Line Busy Tone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>152</td>
+					<td>Reorder Tone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>153</td>
+					<td>Call Waiting Tone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>154</td>
+					<td>Confirmation Tone 1</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>155</td>
+					<td>Confirmation Tone 2</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>156</td>
+					<td>Tones Off</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>176</td>
+					<td>Phone Key 0</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>177</td>
+					<td>Phone Key 1</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>178</td>
+					<td>Phone Key 2</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>179</td>
+					<td>Phone Key 3</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>180</td>
+					<td>Phone Key 4</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>181</td>
+					<td>Phone Key 5</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>182</td>
+					<td>Phone Key 6</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>183</td>
+					<td>Phone Key 7</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>184</td>
+					<td>Phone Key 8</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>185</td>
+					<td>Phone Key 9</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>186</td>
+					<td>Phone Key Star</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>187</td>
+					<td>Phone Key Pound</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>188</td>
+					<td>Phone Key A</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>189</td>
+					<td>Phone Key B</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>190</td>
+					<td>Phone Key C</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>191</td>
+					<td>Phone Key D</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page12">Consumer Devices (12)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>Consumer Control</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Numeric Key Pad</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>32</td>
+					<td>+10</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>33</td>
+					<td>+100</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>34</td>
+					<td>AM/PM</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>48</td>
+					<td>Power</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>49</td>
+					<td>Reset</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>50</td>
+					<td>Sleep</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>51</td>
+					<td>Sleep After</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>52</td>
+					<td>Sleep Mode</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>53</td>
+					<td>Illumination</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>54</td>
+					<td>Function Buttons</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>64</td>
+					<td>Menu</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>65</td>
+					<td>Menu  Pick</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>66</td>
+					<td>Menu Up</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>67</td>
+					<td>Menu Down</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>68</td>
+					<td>Menu Left</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>69</td>
+					<td>Menu Right</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>70</td>
+					<td>Menu Escape</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>71</td>
+					<td>Menu Value Increase</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>72</td>
+					<td>Menu Value Decrease</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>96</td>
+					<td>Data On Screen</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>97</td>
+					<td>Closed Caption</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>98</td>
+					<td>Closed Caption Select</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>99</td>
+					<td>VCR/TV</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>100</td>
+					<td>Broadcast Mode</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>101</td>
+					<td>Snapshot</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>102</td>
+					<td>Still</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>128</td>
+					<td>Selection</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>129</td>
+					<td>Assign Selection</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>130</td>
+					<td>Mode Step</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>131</td>
+					<td>Recall Last</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>132</td>
+					<td>Enter Channel</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>133</td>
+					<td>Order Movie</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>134</td>
+					<td>Channel</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>135</td>
+					<td>Media Selection</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>136</td>
+					<td>Media Select Computer</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>137</td>
+					<td>Media Select TV</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>138</td>
+					<td>Media Select WWW</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>139</td>
+					<td>Media Select DVD</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>140</td>
+					<td>Media Select Telephone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>141</td>
+					<td>Media Select Program Guide</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>142</td>
+					<td>Media Select Video Phone</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>143</td>
+					<td>Media Select Games</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>144</td>
+					<td>Media Select Messages</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>145</td>
+					<td>Media Select CD</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>146</td>
+					<td>Media Select VCR</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>147</td>
+					<td>Media Select Tuner</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>148</td>
+					<td>Quit</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>149</td>
+					<td>Help</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>150</td>
+					<td>Media Select Tape</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>151</td>
+					<td>Media Select Cable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>152</td>
+					<td>Media Select Satellite</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>153</td>
+					<td>Media Select Security</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>154</td>
+					<td>Media Select Home</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>155</td>
+					<td>Media Select Call</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>156</td>
+					<td>Channel Increment</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>157</td>
+					<td>Channel Decrement</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>160</td>
+					<td>VCR Plus</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>161</td>
+					<td>Once</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>162</td>
+					<td>Daily</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>163</td>
+					<td>Weekly</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>164</td>
+					<td>Monthly</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>176</td>
+					<td>Play</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>177</td>
+					<td>Pause</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>178</td>
+					<td>Record</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>179</td>
+					<td>Fast Forward</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>180</td>
+					<td>Rewind</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>181</td>
+					<td>Scan Next Track</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>182</td>
+					<td>Scan Previous Track</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>183</td>
+					<td>Stop</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>184</td>
+					<td>Eject</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>185</td>
+					<td>Random Play</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>186</td>
+					<td>Select Disc</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>187</td>
+					<td>Enter Disc</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>188</td>
+					<td>Repeat</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>189</td>
+					<td>Tracking</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>190</td>
+					<td>Track Normal</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>191</td>
+					<td>Slow Tracking</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>192</td>
+					<td>Frame Forward</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>193</td>
+					<td>Frame Back</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>194</td>
+					<td>Mark</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>195</td>
+					<td>Clear Mark</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>196</td>
+					<td>Repeat From Mark</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>197</td>
+					<td>Return To Mark</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>198</td>
+					<td>Search Mark Forward</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>199</td>
+					<td>Search Mark Backwards</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>200</td>
+					<td>Counter Reset</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>201</td>
+					<td>Show Counter</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>202</td>
+					<td>Tracking Increment</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>203</td>
+					<td>Tracking Decrement</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>224</td>
+					<td>Volume</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>225</td>
+					<td>Balance</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>226</td>
+					<td>Mute</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>227</td>
+					<td>Bass</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>228</td>
+					<td>Treble</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>229</td>
+					<td>Bass Boost</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>230</td>
+					<td>Surround Mode</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>231</td>
+					<td>Loudness</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>232</td>
+					<td>MPX</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>233</td>
+					<td>Volume Up</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>234</td>
+					<td>Volume Down</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>240</td>
+					<td>Speed Select</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>241</td>
+					<td>Playback Speed</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>242</td>
+					<td>Standard Play</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>243</td>
+					<td>Long Play</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>244</td>
+					<td>Extended Play</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>245</td>
+					<td>Slow</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>256</td>
+					<td>Fan Enable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>257</td>
+					<td>Fan Speed</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>258</td>
+					<td>Light</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>259</td>
+					<td>Light Illumination Level</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>260</td>
+					<td>Climate Control Enable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>261</td>
+					<td>Room Temperature</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>262</td>
+					<td>Security Enable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>263</td>
+					<td>Fire Alarm</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>264</td>
+					<td>Police Alarm</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page13">Digitizers (13)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>Digitizer</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Pen</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Light Pen</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Touch Screen</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Touch Pad</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>White Board</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Coordinate Measuring Machine</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>3-D Digitizer</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Stereo Plotter</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>Articulated Arm</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>Armature</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>Multiple Point Digitizer</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>Free Space Wand</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>32</td>
+					<td>Stylus</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>33</td>
+					<td>Puck</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>34</td>
+					<td>Finger</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>48</td>
+					<td>Tip Pressure</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>49</td>
+					<td>Barrel Pressure</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>50</td>
+					<td>In Range</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>51</td>
+					<td>Touch</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>52</td>
+					<td>Untouch</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>53</td>
+					<td>Tap</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>54</td>
+					<td>Quality</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>55</td>
+					<td>Data Valid</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>56</td>
+					<td>Transducer Index</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>57</td>
+					<td>Tablet Function Keys</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>58</td>
+					<td>Program Change Keys</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>59</td>
+					<td>Battery Strength</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>60</td>
+					<td>Invert</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>61</td>
+					<td>X Tilt</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>62</td>
+					<td>Y Tilt</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>63</td>
+					<td>Azimuth</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>64</td>
+					<td>Altitude</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>65</td>
+					<td>Twist</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>66</td>
+					<td>Tip Switch</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>67</td>
+					<td>Secondary Tip Switch</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>68</td>
+					<td>Barrel Switch</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>69</td>
+					<td>Eraser</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>70</td>
+					<td>Tablet Pick</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page16">Unicode (16)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page20">Alphnumeric Display (20)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>Alphanumeric Display</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>32</td>
+					<td>Display Attributes Report</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>33</td>
+					<td>ASCII Character Set</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>34</td>
+					<td>Data Read Back</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>35</td>
+					<td>Font Read Back</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>36</td>
+					<td>Display Control Report</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>37</td>
+					<td>Clear Display</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>38</td>
+					<td>Display Enable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>39</td>
+					<td>Screen Saver Delay</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>40</td>
+					<td>Screen Saver Enable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>41</td>
+					<td>Vertical Scroll</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>42</td>
+					<td>Horizontal Scroll</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>43</td>
+					<td>Character Report</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>44</td>
+					<td>Display Data</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>45</td>
+					<td>Display Status</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>46</td>
+					<td>Stat Not Ready</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>47</td>
+					<td>Stat Ready</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>48</td>
+					<td>Err Not a loadable character</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>49</td>
+					<td>Err Font data cannot be read</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>50</td>
+					<td>Cursor Position Report</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>51</td>
+					<td>Row</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>52</td>
+					<td>Column</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>53</td>
+					<td>Rows</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>54</td>
+					<td>Columns</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>55</td>
+					<td>Cursor Pixel Positioning</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>56</td>
+					<td>Cursor Mode</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>57</td>
+					<td>Cursor Enable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>58</td>
+					<td>Cursor Blink</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>59</td>
+					<td>Font Report</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>60</td>
+					<td>Font Data</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>61</td>
+					<td>Character Width</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>62</td>
+					<td>Character Height</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>63</td>
+					<td>Character Spacing Horizontal</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>64</td>
+					<td>Character Spacing Vertical</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>65</td>
+					<td>Unicode Character Set</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page128">Monitor (128)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>Monitor Control</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>EDID Information</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>VDIF Information</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>VESA Version</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>On Screen Display</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Auto Size Center</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Polarity Horz Synch</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Polarity Vert Synch</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Sync Type</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>Screen Position</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>Horizontal Frequency</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>Vertical Frequency</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page129">Monitor Enumerated Values (129)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page130">VESA Virtual Controls (130)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>16</td>
+					<td>Brightness</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<td>Contrast</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>22</td>
+					<td>Video Gain Red</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>24</td>
+					<td>Video Gain Green</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>26</td>
+					<td>Video Gain Blue</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>28</td>
+					<td>Focus</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>32</td>
+					<td>Horizontal Position</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>34</td>
+					<td>Horizontal Size</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>36</td>
+					<td>Horizontal Pincushion</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>38</td>
+					<td>Horizontal Pincushion Balance</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>40</td>
+					<td>Horizontal Misconvergence</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>42</td>
+					<td>Horizontal Linearity</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>44</td>
+					<td>Horizontal Linearity Balance</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>48</td>
+					<td>Vertical Position</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>50</td>
+					<td>Vertical Size</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>52</td>
+					<td>Vertical Pincushion</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>54</td>
+					<td>Vertical Pincushion Balance</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>56</td>
+					<td>Vertical Misconvergence</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>58</td>
+					<td>Vertical Linearity</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>60</td>
+					<td>Vertical Linearity Balance</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>64</td>
+					<td>Parallelogram Distortion</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>66</td>
+					<td>Trapezoidal Distortion</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>68</td>
+					<td>Tilt</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>70</td>
+					<td>Top Corner Distortion Control</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>72</td>
+					<td>Top Corner Distortion Balance</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>74</td>
+					<td>Bottom Corner Distortion Control</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>76</td>
+					<td>Bottom Corner Distortion Balance</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>86</td>
+					<td>Moiré Horizontal</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>88</td>
+					<td>Moiré Vertical</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>94</td>
+					<td>Input Level Select</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>96</td>
+					<td>Input Source Select</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>98</td>
+					<td>Stereo Mode</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>108</td>
+					<td>Video Black Level Red</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>110</td>
+					<td>Video Black Level Green</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>112</td>
+					<td>Video Black Level Blue</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page131">VESA Command (131)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>Settings</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Degauss</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page132">Power Device (132)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>iName</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>PresentStatus</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>ChangedStatus</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>UPS</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>PowerSupply</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<td>BatterySystem</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>BatterySystemID</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<td>Battery</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>19</td>
+					<td>BatteryID</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>20</td>
+					<td>Charger</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>21</td>
+					<td>ChargerID</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>22</td>
+					<td>PowerConverter</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>23</td>
+					<td>PowerConverterID</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>24</td>
+					<td>OutletSystem</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>25</td>
+					<td>OutletSystemID</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>26</td>
+					<td>Input</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>27</td>
+					<td>InputID</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>28</td>
+					<td>Output</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>29</td>
+					<td>OutputID</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>30</td>
+					<td>Flow</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>31</td>
+					<td>FlowID</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>32</td>
+					<td>Outlet</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>33</td>
+					<td>OutletID</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>34</td>
+					<td>Gang</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>35</td>
+					<td>GangID</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>36</td>
+					<td>Sink</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>37</td>
+					<td>SinkID</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>48</td>
+					<td>Voltage</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>49</td>
+					<td>Current</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>50</td>
+					<td>Frequency</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>51</td>
+					<td>ApparentPower</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>52</td>
+					<td>ActivePower</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>53</td>
+					<td>PercentLoad</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>54</td>
+					<td>Temperature</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>55</td>
+					<td>Humidity</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>64</td>
+					<td>ConfigVoltage</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>65</td>
+					<td>ConfigCurrent</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>66</td>
+					<td>ConfigFrequency</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>67</td>
+					<td>ConfigApparentPower</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>68</td>
+					<td>ConfigActivePower</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>69</td>
+					<td>ConfigPercentLoad</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>70</td>
+					<td>ConfigTemperature</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>71</td>
+					<td>ConfigHumidity</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>80</td>
+					<td>SwitchOnControl</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>81</td>
+					<td>SwitchOffControl</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>82</td>
+					<td>ToggleControl</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>83</td>
+					<td>LowVoltageTransfer</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>84</td>
+					<td>HighVoltageTransfer</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>85</td>
+					<td>DelayBeforeReboot</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>86</td>
+					<td>DelayBeforeStartup</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>87</td>
+					<td>DelayBeforeShutdown</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>88</td>
+					<td>Test</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>89</td>
+					<td>Vendorspecificcommand</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>96</td>
+					<td>Present</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>97</td>
+					<td>Good</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>98</td>
+					<td>InternalFailure</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>99</td>
+					<td>VoltageOutOfRange</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>100</td>
+					<td>FrequencyOutOfRange</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>101</td>
+					<td>Overload</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>102</td>
+					<td>OverCharged</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>103</td>
+					<td>OverTemperature</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>104</td>
+					<td>ShutdownRequested</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>105</td>
+					<td>ShutdownImminent</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>106</td>
+					<td>VendorSpecificAnswerValid</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>107</td>
+					<td>SwitchOn/Off</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>108</td>
+					<td>Switcheble</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>109</td>
+					<td>Used</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>110</td>
+					<td>Boost</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>111</td>
+					<td>Buck</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>112</td>
+					<td>Initialized</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>113</td>
+					<td>Tested</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page133">Battery System (133)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>SMBBatteryMode</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>SMBBatteryStatus</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>SMBAlarmWarning</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>SMBChargerMode</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>SMBChargerStatus</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>SMBChargerSpecInfo</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>SMBSelectorState</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>SMBSelectorPreset</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>SMBSelectorInfo</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<td>OptionalMfgFunction1</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>OptionalMfgFunction2</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<td>OptionalMfgFunction3</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>19</td>
+					<td>OptionalMfgFunction4</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>20</td>
+					<td>OptionalMfgFunction5</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>21</td>
+					<td>ConnectionToSMBus</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>22</td>
+					<td>OutputConnection</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>23</td>
+					<td>ChargerConnection</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>24</td>
+					<td>BatteryInsertion</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>25</td>
+					<td>Usenext</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>26</td>
+					<td>OKToUse</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>40</td>
+					<td>ManufacturerAccess</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>41</td>
+					<td>RemainingCapacityLimit</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>42</td>
+					<td>RemainingTimeLimit</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>43</td>
+					<td>AtRate</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>44</td>
+					<td>CapacityMode</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>45</td>
+					<td>BroadcastToCharger</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>46</td>
+					<td>PrimaryBattery</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>47</td>
+					<td>ChargeController</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>64</td>
+					<td>TerminateCharge</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>65</td>
+					<td>TermminateDischarge</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>66</td>
+					<td>BelowRemainingCapacityLimit</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>67</td>
+					<td>RemainingTimeLimitExpired</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>68</td>
+					<td>Charging</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>69</td>
+					<td>Discharging</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>70</td>
+					<td>FullyCharged</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>71</td>
+					<td>FullyDischarged</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>72</td>
+					<td>ConditionningFlag</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>73</td>
+					<td>AtRateOK</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>74</td>
+					<td>SMBErrorCode</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>75</td>
+					<td>NeedReplacement</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>96</td>
+					<td>AtRateTimeToFull</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>97</td>
+					<td>AtRateTimeToEmpty</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>98</td>
+					<td>AverageCurrent</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>99</td>
+					<td>Maxerror</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>100</td>
+					<td>RelativeStateOfCharge</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>101</td>
+					<td>AbsoluteStateOfCharge</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>102</td>
+					<td>RemainingCapacity</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>103</td>
+					<td>FullChargeCapacity</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>104</td>
+					<td>RunTimeToEmpty</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>105</td>
+					<td>AverageTimeToEmpty</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>106</td>
+					<td>AverageTimeToFull</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>107</td>
+					<td>CycleCount</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>128</td>
+					<td>BattPackModelLevel</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>129</td>
+					<td>InternalChargeController</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>130</td>
+					<td>PrimaryBatterySupport</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>131</td>
+					<td>DesignCapacity</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>132</td>
+					<td>SpecificationInfo</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>133</td>
+					<td>ManufacturerDate</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>134</td>
+					<td>SerialNumber</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>135</td>
+					<td>iManufacturerName</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>136</td>
+					<td>iDevicename</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>137</td>
+					<td>iDeviceChemistery</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>138</td>
+					<td>iManufacturerData</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>139</td>
+					<td>Rechargeable</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>140</td>
+					<td>WarningCapacityLimit</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>141</td>
+					<td>CapacityGranularity1</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>142</td>
+					<td>CapacityGranularity2</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>192</td>
+					<td>InhibitCharge</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>193</td>
+					<td>EnablePolling</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>194</td>
+					<td>ResetToZero</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>208</td>
+					<td>ACPresent</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>209</td>
+					<td>BatteryPresent</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>210</td>
+					<td>PowerFail</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>211</td>
+					<td>AlarmInhibited</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>212</td>
+					<td>ThermistorUnderRange</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>213</td>
+					<td>ThermistorHot</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>214</td>
+					<td>ThermistorCold</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>215</td>
+					<td>ThermistorOverRange</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>216</td>
+					<td>VoltageOutOfRange</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>217</td>
+					<td>CurrentOutOfRange</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>218</td>
+					<td>CurrentNotRegulated</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>219</td>
+					<td>VoltageNotRegulated</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>220</td>
+					<td>MasterMode</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>221</td>
+					<td>ChargerBattery/HostControlled</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>240</td>
+					<td>ChargerSpecInfo</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>241</td>
+					<td>ChargerSpecRef</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>242</td>
+					<td>Level2</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>243</td>
+					<td>Level3</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<h2><a id="page65280">Vendor Defined Page 1 (65280)</a></h2>
+		<table>
+			<tbody>
+				<tr><th>#</th><th>Name</th><th>Alias</th></tr>
+				<tr>
+					<td>1</td>
+					<td>Vendor Usage 1</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Vendor Usage 2</td>
+					<td>---</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
