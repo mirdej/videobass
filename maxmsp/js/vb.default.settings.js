@@ -18,6 +18,9 @@ function paths(p,home) {
 	setting ("camera_flip",							"0")
 	setting ("camera_focus",						"0.5")
 	setting ("camera_hue",							"0.5")
+	setting ("camera_contrast",							"0.5")
+	setting ("camera_saturation",							"0.5")
+	setting ("camera_brightness",							"0.5")
 	
 	setting ("joysticks_cut_speed",							"24.")
 	setting ("joysticks_fade_speed",							"127.")
