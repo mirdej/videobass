@@ -1,11 +1,16 @@
 var preferences_path;
 
 function setting (name,setting) {
+	var fname = preferences_path+name+".txt";
 	var f;
-	f = new File(preferences_path+name+".txt", "write");	
-	f.open()
-	f.writestring(setting);
-	f.close();
+// see if file exists already
+	f = new File(fname);
+	if (f.eof == -1) {
+		f = new File(fname, "write");	
+		f.open()
+		f.writestring(setting);
+		f.close();
+	}
 }
 
 function paths(p,home) {
