@@ -248,7 +248,7 @@
 	<key>CFBundleExecutable</key>
 	<string>videobass</string>
 	<key>CFBundleGetInfoString</key>
-	<string>3.0 by Michael Egger http://www.anyma.ch/research/videobass</string>
+	<string>Videobass 3.0 by Michael Egger http://www.anyma.ch/research/videobass</string>
 	<key>CFBundleIconFile</key>
 	<string>vb.icon.icns</string>
 	<key>CFBundleIdentifier</key>
