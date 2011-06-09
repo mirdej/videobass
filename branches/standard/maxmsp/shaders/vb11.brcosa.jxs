@@ -1,0 +1,61 @@
+<jittershader name="uyvy2rgba">
+	<description>
+	converts packed uyvy data as rgba data to full chroma rgba data
+	</description>
+	<param name="brightness" type="float" default="1." />
+	<param name="contrast" type="float" default="1." />
+	<param name="saturation" type="float" default="1." />
+		<language name="glsl" version="1.0">
+		<bind param="brightness" program="fp" />
+		<bind param="contrast" program="fp" />
+		<bind param="saturation" program="fp" />
+		<program name="vp" type="vertex" source="sh.passthru.xform.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// texcoords
+varying vec2 texcoord0;
+
+// parameters
+uniform float brightness;
+uniform float contrast;
+uniform float saturation;
+
+// samplers
+uniform sampler2DRect tex0;
+
+// entry point
+void main()
+{   
+	vec4 yuv_val = texture2DRect(tex0, texcoord0);
+
+
+	// apply brightness, contrast saturation in YUV 
+	// (equivalent to following)
+	//	yuv_val.x = ((yuv_val.x+(brightness-1.))-0.5)*contrast+0.5;
+	//	yuv_val.y = (yuv_val.y-0.5)*saturation; 	// U(Cb): -0.5 - 0.5 
+	//	yuv_val.z = (yuv_val.z-0.5)*saturation; 	// V(Cr): -0.5 - 0.5 
+	
+ yuv_val.r = (contrast *  (yuv_val.r - 0.5)) + (brightness -.5);
+ yuv_val.b = (contrast *  (yuv_val.b - 0.5)) + (brightness - .5);
+
+ yuv_val.a = saturation *  brightness  * (yuv_val.a - .5) + .5;
+ yuv_val.g = saturation * brightness * (yuv_val.g - .5) + .5;
+		
+	/*	yuv_val = (yuv_val + vec4(brightness-1.5,-0.5,brightness-1.5,-0.5))  
+				* vec4(contrast,saturation,contrast,saturation)
+				+ vec4(0.5,0.,0.5,0.);
+	*/			
+	gl_FragColor = yuv_val;
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>
+
+
+
+
+
+
