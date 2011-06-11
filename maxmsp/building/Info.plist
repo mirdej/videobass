@@ -246,7 +246,7 @@
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
-	<string>videobass</string>
+	<string>Videobass</string>
 	<key>CFBundleGetInfoString</key>
 	<string>Videobass 3.0 by Michael Egger http://www.anyma.ch/research/videobass</string>
 	<key>CFBundleIconFile</key>
