@@ -19,7 +19,7 @@
 ################################################################################
 
 NAME ?= Videobass-App
-VERSION ?= 3.0.0
+VERSION ?= 3.0.1
 
 SOURCE_DIR ?= .
 SOURCE_FILES ?= Videobass.app ReadMe.rtf License.txt
