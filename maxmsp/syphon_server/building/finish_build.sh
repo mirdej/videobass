@@ -1,5 +1,6 @@
 # COPY extension ----------------------------------------------------------------------------------------------------
 cp -R ../mxo/jit.gl.syphonserver.mxo VideobassSyphonServer.app/Contents/Resources/
+cp -R ../abstractions/vss.syphon.maxpat VideobassSyphonServer.app/Contents/Resources/
 
 # jit.openexr.mxo is needed by jit.net.receive
 cp -R /Applications/Max5/Cycling\ \'74/jitter-externals/jit.openexr.mxo VideobassSyphonServer.app/Contents/Resources/
