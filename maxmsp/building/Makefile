@@ -55,6 +55,9 @@ $(WC_DMG): $(TEMPLATE_DMG)
 
 $(MASTER_DMG): $(WC_DMG) $(addprefix $(SOURCE_DIR)/,$(SOURCE_FILES))
 	@echo
+	@echo --------------------- Finishing App --------------------
+	./finish_build.sh
+	@echo
 	@echo --------------------- Creating Disk Image --------------------
 	mkdir -p $(WC_DIR)
 	hdiutil attach "$(WC_DMG)" -noautoopen -quiet -mountpoint "$(WC_DIR)"
@@ -70,7 +73,9 @@ $(MASTER_DMG): $(WC_DMG) $(addprefix $(SOURCE_DIR)/,$(SOURCE_FILES))
 	hdiutil convert "$(WC_DMG)" -quiet -format UDZO -imagekey zlib-level=9 -o "$@"
 	rm -rf $(WC_DIR)
 	@echo
+	@echo
+	@echo --------------------- Done. --------------------
 
 .PHONY: clean
 clean:
-	-rm -rf $(TEMPLATE_DMG) $(MASTER_DMG) $(WC_DMG)
+	-rm -rf $(TEMPLATE_DMG) $(MASTER_DMG) $(WC_DMG) Videobass.app
