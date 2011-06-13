@@ -1,0 +1,12 @@
+#summary Tuning and calibrating the instrument
+
+= Introduction =
+
+The sensors of the videobass need to be calibrated, otherwise the instrument can behave erratically. Potentiometers and jysticks have a center position. The software has to learn where these centers are exactly. Also, every time a string changes its tension - because it is loosening over time, or because you readjusted its tension - it also changes the values it sends to the computer and therefore it is important to calibrate (or "tune") the strings quite regularly - best before every performance.
+
+
+= Tuning =
+
+To "tune" the videobass you don't turn the peg heads, they are just to adjust global tension of the strings, see Maintenance.
+
+Instead you simply push the tuning button in the headstock. This launches the calibration procedure. While calibrating, just finger the lowest and the highest note on every string, then push the tuning button again.
