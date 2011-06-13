@@ -2,24 +2,31 @@
 
 = Maintenance de la videobasse =
 
-== Fingerboard and strings ==
+== La touche ==
 
-The most important care must be given to the fingerboard and the strings. When playing you will constantly put some grease from your fingers on the aluminum. This will change the electrical conductivity of the fingerboard and therefore the responsiveness of the strings.
+Le plus important c'est de bien soigner la touche et les cordes de la videobasse.
 
-Regularly clean the aluminum fingerboard with white spirit or acetone.
+En jouant, on dépose vite de la graisse sul l'aluminium de la touche, ce qui change la conductivité éléctrique et donc la réponse des cordes.
 
-It is also a good practice to regularly remove oxidation from the strings (especially the side that touches the fingerboard) with very fine sanding paper (600) or steel wool. This can also be used to remove small bumps and irregularities on the fingerboard.
+Il faut regulièrement dégraisser l'aluminium avec de l'alcohol à bruler ou de l'acétone. 
 
-== Cleaning the plexiglass ==
+Le contact électrique est aussi perturbé par de l'oxydation des cordes. C'est bien de régulièrement reponçer les cordes avec du papier de verre très fin (600) ou avec de la laine de fer. Ceci aide aussi pour enlever des griffes et autres irrégularités sur l'aluminium.
 
-Use a soft towel for cleaning the plexiglass. An old t-shirt that has been a lot in the washing machine will do fine. 
-Use clean water with some dish washing soap and wipe clean with a dry soft towel. *Never use alcohol or acetone on the plexiglass*
+== Nettoyer le pléxi ==
 
-== Body and neck ==
+Pour nettoyer le pléxi, utilisez un tissu très doux, comme un vieux t-shirt qui à souvent passé à la machine, ainsi que de l'eau chaude savonneuse - avec du produit de vaisselle par exemple. Ensuite essuyer avec un tissu doux et propre. Attention de ne pas griffer le pléxi avec des graines de poussière.
 
-The wooden parts are treated with wood oil. From time to time it is a good idea to refresh the oiling a bit. Just rub a small quantity of wood oil over the body and neck with a soft cloth (without spilling too much on the plexiglass). Leave it for half an hour and remove the residue with a clean piece of cloth.
+*Ne jamais utiliser de l'alcohol ou de l'acétone!*
 
-== Strings ==
 
-The videobass strings are quite durable. We usually keep a set of strings for over a year. Just clean them regularly. String tension can be adjusted with a screwdriver on the peg heads. I usually adjust the tension so that they make a very low note when picked - but the exact tension doesn't really matter as they don't need to produce any sound. When you put on a new string it will lose tension quite quickly, like on a nylon guitar, and you'll have to adjust tension quite often for the first two weeks.
+== Corps et manche en bois ==
 
+Le bois est traité avec de l'huile naturelle (huile rouge) qui protège le bois de l'humidité mais qui laisse respirer. De temps en temps c'est bien de rafraichir la couche, en mettant un peu d'huile sur un chiffon et bien le frotter sur touts les parties en bois (on essayant de ne pas trop toucher le pléxiglass). Ensuite laisser agir environ 30 minutes et enlever les restes avec un chiffon propre.
+
+== Cordes ==
+
+Les cordes de la basse sont assez durables. Nous gardons un jeu de cordes pour plus d'une année, si on enlève régulièrement l'oxyde avec du papier de verre.
+La tension des cordes peut être ajusté à l'aide des mécaniques à la tête de l'instrument avec un tournevis plat.
+La tension n'a pas trop d'importance, vu que la corde ne doit produire aucun son, c'est plutôt une question d'ergonomie. Moi je les règle tous à la même tension de sorte que quand je les mets en vibration ils émettent quand-même son bien grave.
+
+Si on change une corde, elle va se détendre pendant un moment, comme sur une vrai guitare, et au début il faudra ajuster la tension assez souvent.
