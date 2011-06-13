@@ -7,7 +7,7 @@ The sensors of the videobass need to be calibrated, otherwise the instrument can
 There are three classes of calibration on the videobass
   * [Calibration#Tuning Tuning] is performed quite often to adapt to changes in the tension of the strings
   * [Calibration#Centering Centering] the potentiometers should not be necessary very often
-  * In the beginning you may want to [Calibration#Setup set up] certain parameters, like joystick zones.
+  * In the beginning you may want to [Calibration#Basic_Setup set up] certain parameters, like joystick zones.
 
 ==Tuning==
 
@@ -22,4 +22,14 @@ It is possible to tune only select strings. Don't touch a string that is well tu
 Tuning the strings will also reset the centers of the four joystick, so take care not to touch them while tuning the strings.
 
 ==Centering==
-Most of the potentiometers on the videobass have a center detent, so you can actually feel where the 0 position is.
+Most of the potentiometers on the videobass have a center detent, so you can actually feel where the 0 position is. But for this to work, the videobass application has to know where the position of the click exactly is and define it as zero. Even the,n with great changes in temperature for example, the point of 0 can move around a bit, so every once in a while you'll have to teach the videobass where exactly the centers are.
+
+For this you have to open the [Settings] screen.
+
+ # Center all potentiometers. Every. All 12 of them!
+ # Click on "Set centers" in the middle of the graphic of the body
+ # That's it
+
+This will also reset the centers of the four joysticks, so be sure not to touch them while clicking o the button.
+
+==Basic Setup==
