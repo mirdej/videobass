@@ -53,18 +53,21 @@ double clip_double(double n,double min,double max) {
 	return n;
 }
 
-void vbmixer_delta(t_vbmixer *x,long idx, long delta){
-	idx = clip_long(idx,0,3);
-	delta = clip_long(delta,0,255);
+void vbmixer_delta(t_vbmixer *x,long idx, double delta){
+	idx = clip_long(idx - 1,0,3);
+
+//	delta = clip_double(delta,0,255);
 	double sign = 1.;
-	if (delta < 127) sign = -1;
-	
-	x->delta[idx] = sign * pow(abs((double)delta - 127.) / 96., x->pow_delta) / x->scale_delta;
+	if (delta < 0) {
+		sign = -1;
+		delta *= -1.;
+	}
+	 
+	x->delta[idx] = sign * pow(delta, x->pow_delta) / x->scale_delta;
 }
 
 void vbmixer_q(t_vbmixer *x,long idx, double q){
-	idx = clip_long(idx,0,3);
-	char
+	idx = clip_long(idx - 1,0,3);
 	if (q == 0.) {	
 		x->in_game[idx] = 1;
 	} else {
@@ -76,7 +79,7 @@ void vbmixer_q(t_vbmixer *x,long idx, double q){
 void vbmixer_cut_to(t_vbmixer *x,long idx){
 	unsigned char i;
 	x->force_output = 1;
-	idx = clip_long(idx,0,3);
+	idx = clip_long(idx - 1,0,3);
 	for (i=0;i<4;i++) {
 		x->values[i]=0.;
 	}
@@ -157,6 +160,7 @@ static void *vbmixer_new(t_symbol *s, long argc, t_atom argv[]) {
 			x->delta[i] = 0.;
 			x->sent[i] = -1.;
 			x->values[i] = 0.;
+			x->in_game[i] = 1;
 		}
 		x->values[0] = 1.;
 //		x->scale_delta = 512;
@@ -184,14 +188,14 @@ int main(void){
 	
 	class_addmethod(c, (method)vbmixer_bang, "bang", 0);
 	class_addmethod(c, (method)vbmixer_force_output, "force_output", 0);
-	class_addmethod(c, (method)vbmixer_delta, "delta", A_DEFLONG,A_DEFLONG,0);
+	class_addmethod(c, (method)vbmixer_delta, "delta", A_DEFLONG,A_DEFFLOAT,0);
 	class_addmethod(c, (method)vbmixer_q, "q", A_DEFLONG,A_DEFFLOAT,0);
 	class_addmethod(c, (method)vbmixer_cut_to, "cut_to", A_DEFLONG,0);
 
   	CLASS_ATTR_DOUBLE(c, "scale_delta", 0, t_vbmixer, scale_delta);
   	CLASS_ATTR_DOUBLE(c, "pow_delta", 0, t_vbmixer, pow_delta);
-	CLASS_ATTR_DEFAULT(c, "scale_delta", 0,"127.");
-	CLASS_ATTR_DEFAULT(c, "pow_delta", 0,"2.");
+	CLASS_ATTR_DEFAULT(c, "scale_delta", 0,"2.");
+	CLASS_ATTR_DEFAULT(c, "pow_delta", 0,"4.");
 
 	// we want this class to instantiate inside of the Max UI; ergo CLASS_BOX
 	vbmixer_class = c;
@@ -199,3 +203,10 @@ int main(void){
  
 	return 1;
 }
+
+
+/*-- changes
+2011-08-03
+- made idxs based on 1 to be more compatible with the new hi.tools
+delta is now a float -1. to 1. (like q)
+*/
