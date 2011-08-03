@@ -15,6 +15,7 @@ typedef struct _vbmixer				// defines our object's internal variables for each i
 	void			*sumout;
 	
 	double			delta[4];
+	char			in_game[4];
 	double			values[4];
 	double 			sent[4];
 	
@@ -59,8 +60,18 @@ void vbmixer_delta(t_vbmixer *x,long idx, long delta){
 	if (delta < 127) sign = -1;
 	
 	x->delta[idx] = sign * pow(abs((double)delta - 127.) / 96., x->pow_delta) / x->scale_delta;
-	
 }
+
+void vbmixer_q(t_vbmixer *x,long idx, double q){
+	idx = clip_long(idx,0,3);
+	char
+	if (q == 0.) {	
+		x->in_game[idx] = 1;
+	} else {
+		x->in_game[idx] = 0;
+	}
+}
+
 
 void vbmixer_cut_to(t_vbmixer *x,long idx){
 	unsigned char i;
@@ -68,7 +79,6 @@ void vbmixer_cut_to(t_vbmixer *x,long idx){
 	idx = clip_long(idx,0,3);
 	for (i=0;i<4;i++) {
 		x->values[i]=0.;
-	//	x->delta[i]=0.;
 	}
 	x->values[idx] = 1.;
 }
@@ -89,11 +99,11 @@ void vbmixer_bang(t_vbmixer *x){
 
 	do_change = x->force_output;
 	for(i = 0;i<4;i++) {
-		total_deltas += x->delta[i];
+		if (x->in_game[i])	total_deltas += x->delta[i];
 		if (x->delta[i] != 0.) {
 			do_change = 1;
 		} else {
-			total_free_to_change += x->values[i];
+			if (x->in_game[i])	total_free_to_change += x->values[i];
 		}
 	}
 	if (do_change == 0) return;
@@ -105,15 +115,17 @@ void vbmixer_bang(t_vbmixer *x){
 		if (x->delta[i] != 0.) {
 			x->values[i] += x->delta[i];
 		} else {
-			if (total_free_to_change != 0) x->values[i] -= (x->values[i] / total_free_to_change * total_deltas);
+			if (total_free_to_change != 0) {
+				if (x->in_game[i])	x->values[i] -= (x->values[i] / total_free_to_change * total_deltas);
+			}
 		}
 		x->values[i] = clip_double(x->values[i],0.,1.);
-		sum += x->values[i];
+		if (x->in_game[i])	sum += x->values[i];
 	}
 	
 	if (sum > 1.) {
 		for(i = 0;i<4;i++) {
-			 x->values[i] = x->values[i] / sum;
+			 if (x->in_game[i])	x->values[i] = x->values[i] / sum;
 		}
 	}
 	
@@ -173,6 +185,7 @@ int main(void){
 	class_addmethod(c, (method)vbmixer_bang, "bang", 0);
 	class_addmethod(c, (method)vbmixer_force_output, "force_output", 0);
 	class_addmethod(c, (method)vbmixer_delta, "delta", A_DEFLONG,A_DEFLONG,0);
+	class_addmethod(c, (method)vbmixer_q, "q", A_DEFLONG,A_DEFFLOAT,0);
 	class_addmethod(c, (method)vbmixer_cut_to, "cut_to", A_DEFLONG,0);
 
   	CLASS_ATTR_DOUBLE(c, "scale_delta", 0, t_vbmixer, scale_delta);
