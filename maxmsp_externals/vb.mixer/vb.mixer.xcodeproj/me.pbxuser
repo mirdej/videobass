@@ -1,7 +1,6 @@
 // !$*UTF8*$!
 {
 	089C1669FE841209C02AAC07 /* Project object */ = {
-		activeArchitecture = i386;
 		activeBuildConfigurationName = Deployment;
 		activeExecutable = 8C673FC60FD4698C00BD68A2 /* Executable */;
 		activeTarget = 2FBBEAD608F335360078DB84 /* vb.mixer */;
@@ -74,8 +73,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 280327748;
-			PBXWorkspaceStateSaveDate = 280327748;
+			PBXPerProjectTemplateStateSaveDate = 328390076;
+			PBXWorkspaceStateSaveDate = 328390076;
 		};
 		sourceControlManager = 8C1609470F20DB8F002B5B41 /* Source Control */;
 		userBuildSettings = {
@@ -89,6 +88,9 @@
 		fallbackIsa = XCSourceControlManager;
 		isSCMEnabled = 0;
 		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
 		};
 	};
 	8C1609480F20DB8F002B5B41 /* Code sense */ = {
@@ -121,6 +123,9 @@
 			};
 		};
 		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
 		dylibVariantSuffix = "";
@@ -134,6 +139,7 @@
 		name = Executable;
 		savedGlobals = {
 		};
+		showTypeColumn = 0;
 		sourceDirectories = (
 		);
 		startupPath = "/Users/me/Documents/development2008/MaxSDK-5.0.6/my_externalsMAX5/sdk-build/";
@@ -205,6 +211,9 @@
 			};
 		};
 		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
 		dylibVariantSuffix = "";
@@ -216,6 +225,7 @@
 		launchableReference = 8C673FCB0FD46A6500BD68A2 /* multitouch.help.maxpat */;
 		libgmallocEnabled = 0;
 		name = ExecutableHelpfile;
+		showTypeColumn = 0;
 		sourceDirectories = (
 		);
 	};
