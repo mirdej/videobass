@@ -15,7 +15,7 @@ typedef struct _vbmixer				// defines our object's internal variables for each i
 	void			*sumout;
 	
 	double			delta[4];
-	char			in_game[4];
+	double			weight[4];
 	double			values[4];
 	double 			sent[4];
 	
@@ -55,8 +55,6 @@ double clip_double(double n,double min,double max) {
 
 void vbmixer_delta(t_vbmixer *x,long idx, double delta){
 	idx = clip_long(idx - 1,0,3);
-
-//	delta = clip_double(delta,0,255);
 	double sign = 1.;
 	if (delta < 0) {
 		sign = -1;
@@ -68,11 +66,11 @@ void vbmixer_delta(t_vbmixer *x,long idx, double delta){
 
 void vbmixer_q(t_vbmixer *x,long idx, double q){
 	idx = clip_long(idx - 1,0,3);
-	if (q == 0.) {	
-		x->in_game[idx] = 1;
-	} else {
-		x->in_game[idx] = 0;
-	}
+	
+//	double temp;
+	//temp = clip_double( -3. * fabs(q) + 1. , 0., 1.);
+	//x->delta[idx] =  x->weight[idx] - temp;
+	x->weight[idx] = clip_double( -3. * fabs(q) + 1. , 0., 1.); //1 - fabs(q);
 }
 
 
@@ -96,54 +94,51 @@ void vbmixer_force_output(t_vbmixer *x){
 
 
 void vbmixer_bang(t_vbmixer *x){
-	unsigned char i,do_change;
-	double total_deltas = 0.;
-	double total_free_to_change = 0.;
+	unsigned char 	i;
+	double			sum_weight;
+	double			sum,excess;
+	
+	sum = 0.;
+	excess= 0.;
+	sum_weight = 0.;
+	
+// 	calculate sum of weights
+	for(i = 0;i<4;i++) {
+		sum_weight += x->weight[i];
+	}
 
-	do_change = x->force_output;
+//	apply deltas and calculate weighted sum
 	for(i = 0;i<4;i++) {
-		if (x->in_game[i])	total_deltas += x->delta[i];
-		if (x->delta[i] != 0.) {
-			do_change = 1;
-		} else {
-			if (x->in_game[i])	total_free_to_change += x->values[i];
-		}
+		x->values[i] += x->delta[i];
+		x->values[i] = clip_double(x->values[i],0.,2.);
+		sum += x->values[i] * x->weight[i];
 	}
-	if (do_change == 0) return;
+// normalize
+	excess = sum -1;
 	
-	x->force_output = 0;
-	
-	double sum = 0.;
 	for(i = 0;i<4;i++) {
-		if (x->delta[i] != 0.) {
-			x->values[i] += x->delta[i];
-		} else {
-			if (total_free_to_change != 0) {
-				if (x->in_game[i])	x->values[i] -= (x->values[i] / total_free_to_change * total_deltas);
-			}
+		if (sum_weight > 0.) {
+			if (x->values[i] > 0.) x->values[i] -= (x->weight[i] * excess)/sum_weight;
 		}
-		x->values[i] = clip_double(x->values[i],0.,1.);
-		if (x->in_game[i])	sum += x->values[i];
-	}
-	
-	if (sum > 1.) {
-		for(i = 0;i<4;i++) {
-			 if (x->in_game[i])	x->values[i] = x->values[i] / sum;
-		}
-	}
-	
-	outlet_float(x->sumout,sum);
-
-	for(i = 0;i<4;i++) {
+		x->values[i] = clip_double (x->values[i],0.,1.);
 		if (x->sent[i] != x->values[i]) {
 			outlet_float(x->outlet[3-i],x->values[i]);
 			x->sent[i] = x->values[i];
 		}
-	}
+	}	
 }
 
-
-
+static void vbmixer_init(t_vbmixer *x) {
+	
+	unsigned char i;
+		for (i=0;i<4;i++) {
+			x->delta[i] = 0.;
+			x->sent[i] = 0.;
+			x->values[i] = 0.;
+			x->weight[i] = 1.;
+		}
+		x->values[0] = 1.;
+}
 //--------------------------------------------------------------------------
 // - Object creation
 //--------------------------------------------------------------------------
@@ -153,17 +148,9 @@ static void *vbmixer_new(t_symbol *s, long argc, t_atom argv[]) {
 	unsigned char i;
 
 	if (x = (t_vbmixer *)object_alloc(vbmixer_class)) {
-		
-		x->sumout = floatout(x);
 		for (i=0;i<4;i++) {
 			x->outlet[i] = floatout(x);
-			x->delta[i] = 0.;
-			x->sent[i] = -1.;
-			x->values[i] = 0.;
-			x->in_game[i] = 1;
-		}
-		x->values[0] = 1.;
-//		x->scale_delta = 512;
+		}		
 		
 		attr_args_process(x, argc, argv);			// so we can type @ attributes into object box
 
@@ -191,6 +178,7 @@ int main(void){
 	class_addmethod(c, (method)vbmixer_delta, "delta", A_DEFLONG,A_DEFFLOAT,0);
 	class_addmethod(c, (method)vbmixer_q, "q", A_DEFLONG,A_DEFFLOAT,0);
 	class_addmethod(c, (method)vbmixer_cut_to, "cut_to", A_DEFLONG,0);
+	class_addmethod(c, (method)vbmixer_init, "init",0);
 
   	CLASS_ATTR_DOUBLE(c, "scale_delta", 0, t_vbmixer, scale_delta);
   	CLASS_ATTR_DOUBLE(c, "pow_delta", 0, t_vbmixer, pow_delta);
