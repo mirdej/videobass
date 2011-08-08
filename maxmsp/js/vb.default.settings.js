@@ -27,6 +27,7 @@ function paths(p,home) {
 	setting ("camera_saturation",							"0.5")
 	setting ("camera_brightness",							"0.5")
 	
+	
 	setting ("joysticks_cut_speed",							"24.")
 	setting ("joysticks_fade_speed",							"127.")
 	setting ("camera_hue",							"0.5")
@@ -37,8 +38,13 @@ function paths(p,home) {
 	setting ("strings_flipback_time",				"2000")
 	setting ("strings_release_recovery",			"200")
 	setting ("clip_path",							home+"Videobass Clips")
+
 	setting ("rec_path",							home+"Videobass Recordings")
 	setting ("rec_slots",							"20")
+	setting ("rec_size",							"320 240")
+	setting ("rec_fps",								"30")
+
+	setting ("playback_size",						"320 240")
 
 
 	for (i=1;i<13;i++) {	setting ("dial_"+i+"_center",			"128")	}
