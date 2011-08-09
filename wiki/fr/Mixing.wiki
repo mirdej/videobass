@@ -16,17 +16,20 @@ L'addition de tout les pistes multipliés par leur volume donne l'image finale.
 Le volume d'une piste est controlé par un mouvement du joystick dans le sens de la corde.
 Pousser le joystick en direction de la tète de la basse baissera le volume de la piste, tirer le joystick vers le bas de la basse augmentera le volume de la piste.
 
-[IMAGE]
+http://videobass.googlecode.com/svn/wiki/img/mixfr1.gif
 
 La somme des volumes est toujours gardé à 100%. Si j'ai, par exemple, une seule piste avec un volume à 100% et je commence ensuite à monter le volume d'une autre à 40%, ma première piste va automatiquement baisser à 60%, effectuant ainsi un crossfade classique.
 
-[IMAGE]
+http://videobass.googlecode.com/svn/wiki/img/mixfr2.gif
 
 Mais si je rajoute une troisième image à 20%, les deux premières vont baisser à 50% et 30% pour faire de la place.
 
-[IMAGE]
+http://videobass.googlecode.com/svn/wiki/img/mixfr3.gif
+
 
 Et si je baisse le volume de ma deuxième piste à zéro, les deux autres vont monter en fonction. Notez aussi qu'une piste muet ne va jamais monter de soi-même.
+
+http://videobass.googlecode.com/svn/wiki/img/mixfr4.gif
 
 == Mixage avec des transparences - Luma Key ==
 
