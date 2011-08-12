@@ -18,7 +18,7 @@ La somme des volumes demeure à 100%. Si j'ai, par exemple, une seule piste avec
 
 http://videobass.googlecode.com/svn/wiki/img/mixfr2.gif
 
-Mais si je rajoute une troisième image à 20%, les deux premières vont baisser à 50% et 30% pour faire de la place.
+Mais si j'ajoute une troisième image à 20%, les deux premières vont baisser à 50% et 30% pour faire de la place.
 
 http://videobass.googlecode.com/svn/wiki/img/mixfr3.gif
 
@@ -30,25 +30,25 @@ http://videobass.googlecode.com/svn/wiki/img/mixfr4.gif
 
 ===Seuil du luma key===
 
-Chaque piste possède un potentiomètre (le plus court tout près du chevalet) qui permet de rendre transparente des parties de l'image. En position centrale, sur le clic, la piste est uniformément opaque, sa transparence apparente dépendant uniquement de son "volume".
+Chaque piste possède un potentiomètre (le plus court tout près du chevalet) qui permet de rendre transparente des parties de l'image. En position centrale, sur le clic, la piste est uniformément opaque, sa transparence dépend uniquement de son "volume".
 
-Tourner le potentiomètre dans le sens d'une montre va rendre aux parties les plus sombres de devenir complètement transparentes. En s'éloignant de plus en plus du centre, même les parties moyennement sombres vont disparaitre, ne laissant que les endroits très clairs de l'image. Dans l'autre sens c'est l'inverse, ce sont d'abord les parties les plus claires qui disparaissent, ne laissant que les noirs.
+Tourner le potentiomètre dans le sens d'une montre va permettre aux parties les plus sombres de devenir complètement transparentes. En s'éloignant de plus en plus du centre, même les parties moyennement sombres vont disparaitre, ne laissant que les endroits très clairs de l'image. Dans l'autre sens c'est l'inverse, ce sont d'abord les parties les plus claires qui disparaissent, ne laissant que les noirs.
 
-Des pistes à transparences sont indiqués dans l'interface logiciel par une couleur de fond verte.
+Des pistes transparentes sont indiqués dans l'interface logiciel par une couleur de fond verte.
 
 ===Ordre des calques===
 
 http://videobass.googlecode.com/svn/wiki/img/vb3-interface.gif
 
-Aux endroits ou l'image est transparente, elle dévoilera les images qui sont en dessous. Pour cela il faut s'imaginer les 4 pistes de la vidéobasse comme des calques superposées:
+Aux endroits ou l'image est transparente, elle dévoilera les images qui sont en dessous. Pour cela il faut imaginer les 4 pistes de la vidéobasse comme des calques superposées:
 
 http://videobass.googlecode.com/svn/wiki/img/calques-lumakey.gif
 
 La corde G se met par dessus la corde D, qui elle est par dessus le A, le tout étant par dessus la corde la plus basse: la corde E.
 
-Du coup, l'ordre des cordes devient important pour la composition de l'image finale. Dans l'exemple si-haut, cordes D et G sont mis en transparence par dessus un mélange classique des cordes E et A.
+Du coup, l'ordre des cordes devient important pour la composition de l'image finale. Dans l'exemple si-dessus, les cordes D et G sont mis en transparence par dessus un mélange classique des cordes E et A.
 
-Dans l'exemple suivant, la G est mis en transparence par dessus D, mais celle si cachera toutes les autres images puisque elle est opaque:
+Dans l'exemple suivant, la G est mis en transparence par dessus la D, mais celle-ci cachera toutes les autres images puisque elle est opaque:
 
 http://videobass.googlecode.com/svn/wiki/img/calques-lumakey2.gif
 
@@ -61,5 +61,5 @@ http://videobass.googlecode.com/svn/wiki/img/mixfr5.gif
 
 De même, des coupures nettes sur les cordes opaques ne vont pas influencer les cordes transparentes, et vice versa.
 
-Toutefois, si on enleve progressivement de la transparence d'une corde qui est dans le mélange, à partir d'un certain seuil elle devra se réintégrer dans le mélange "classique" - du coup le fait de tourner le potentiomètre peut aussi influencer le volume des autres cordes.
+Toutefois, si on enleve progressivement la transparence d'une corde qui est dans le mélange, à partir d'un certain seuil elle devra se réintégrer dans le mélange "classique" - du coup le fait de tourner le potentiomètre peut aussi influencer le volume des autres cordes.
 
