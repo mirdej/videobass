@@ -36,4 +36,20 @@ Chaque piste possède un potentiomètre (le plus court tout près du chevalet) q
 
 Tourner le potentiomètre dans le sens d'une montre va rendre aux parties les plus sombres de devenir complètement transparentes. En s'éloignant de plus en plus du centre, même les parties moyennement sombres vont disparaitre, ne laissant que les endroits très clairs de l'image. Dans l'autre sens c'est l'inverse, ce sont d'abord les parties les plus claires qui disparaissent, ne laissant que les noirs.
 
-Aux endroits ou l'image est transparente, elle dévoilera les images qui sont en dessous. Pour cela il faut s'imaginer les 4 pistes de la vidéobasse comme des calques superposées.
+Des pistes à transparences sont indiqués dans l'interface logiciel par une couleur de fond verte.
+
+===Ordre des calques===
+
+http://videobass.googlecode.com/svn/wiki/img/vb3-interface.gif
+
+Aux endroits ou l'image est transparente, elle dévoilera les images qui sont en dessous. Pour cela il faut s'imaginer les 4 pistes de la vidéobasse comme des calques superposées:
+
+http://videobass.googlecode.com/svn/wiki/img/calques-lumakey.gif
+
+La corde G se met par dessus la corde D, qui elle est par dessus le A, le tout étant par dessus la corde la plus basse: la corde E.
+
+===Contrôle du mélange===
+
+Une piste transparente est exclue du système de mélange à 100% décrit plus haut. Son volume peut être controlé de manière independente. 
+
+Toutefois, si on ramène 
