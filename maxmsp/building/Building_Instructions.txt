@@ -2,6 +2,7 @@ Building instructions
 
 1) Open ../Videobass.maxpat with MaxMSP
 2) Build standalone Application into building folder
+3) Adapt info.plist
 3) Adapt version number in Makefile !!!
 3) Run make in building folder
 
