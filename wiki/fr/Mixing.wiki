@@ -4,21 +4,19 @@
 
 == Mixage traditionnel ==
 
-La vidéobasse permet de mélanger jusqu'à 4 images en même temps, d'une manière peu connu dans le domaine de l'image. Un mélangeur vidéo traditionnel permet de faire une balance entre deux sources, un "crossfade" entre la piste A et B.
+La vidéobasse permet de mélanger jusqu'à 4 images en même temps, d'une manière peu connue dans le domaine de l'image. Un mélangeur vidéo traditionnel permet de faire une balance entre deux sources, un "crossfade" entre la piste A et B.
 
-Ici on est confronté à quatre pistes qui peuvent tous rentrer dans le mélange en même temps, tous avec un niveau de mélange different.
+Ici on est confronté à quatre pistes qui peuvent toutes entrer dans le mélange en même temps, chacune avec un niveau de mélange différent.
 
-Je me permets d'emprunter un terme de la technique audio pour le niveau de mélange et je vais désormais parler du "volume" d'une piste. Le *volume* d'une piste définit à quelle point elle est visible dans l'image finale. Une piste "muet", à un volume de 0%, sera invisible, une piste avec un volume de 100% sera complètement visible.
-L'addition de tout les pistes multipliés par leur volume donne l'image finale.
+Je me permets d'emprunter un terme de la technique audio pour le niveau de mélange et je vais désormais parler du "volume" d'une piste. Le *volume* d'une piste définit à quelle point elle est visible dans l'image finale. Une piste "muette", à un volume de 0%, sera invisible, une piste avec un volume de 100% sera complètement visible. L'addition de toutes les pistes multipliés par leur volume donne l'image finale.
 
 [FORMULE]
 
-Le volume d'une piste est controlé par un mouvement du joystick dans le sens de la corde.
-Pousser le joystick en direction de la tète de la basse baissera le volume de la piste, tirer le joystick vers le bas de la basse augmentera le volume de la piste.
+Le volume d'une piste est contrôlé par un mouvement du joystick dans le sens de la corde. Pousser le joystick en direction de la tête de la basse baissera le volume de la piste, tirer le joystick vers le bas de la basse augmentera le volume de la piste.
 
 http://videobass.googlecode.com/svn/wiki/img/mixfr1.gif
 
-La somme des volumes est toujours gardé à 100%. Si j'ai, par exemple, une seule piste avec un volume à 100% et je commence ensuite à monter le volume d'une autre à 40%, ma première piste va automatiquement baisser à 60%, effectuant ainsi un crossfade classique.
+La somme des volumes demeure à 100%. Si j'ai, par exemple, une seule piste avec un volume à 100% et que je commence ensuite à monter le volume d'une autre à 40%, ma première piste va automatiquement baisser à 60%, effectuant ainsi un crossfade classique.
 
 http://videobass.googlecode.com/svn/wiki/img/mixfr2.gif
 
@@ -26,17 +24,16 @@ Mais si je rajoute une troisième image à 20%, les deux premières vont baisser
 
 http://videobass.googlecode.com/svn/wiki/img/mixfr3.gif
 
-
-Et si je baisse le volume de ma deuxième piste à zéro, les deux autres vont monter en fonction. Notez aussi qu'une piste muet ne va jamais monter de soi-même.
+Et si je baisse le volume de ma deuxième piste à zéro, les deux autres vont monter en fonction. Notez aussi qu'une piste muette ne va jamais monter d’elle-même.
 
 http://videobass.googlecode.com/svn/wiki/img/mixfr4.gif
 
 == Mixage avec des transparences - Luma Key ==
 
 ===Seuil du luma key===
-Chaque piste possède un potentiomètre (le plus court tout près du chevalet) qui permet de rendre transparent des parties de l'image. En position centrale, sur le clic, la piste est uniformément opaque, sa transparence apparente uniquement dépendant de son "volume".
 
-Tourner le potentiomètre dans le sens d'une montre va rendre les parties les plus sombres  complètement transparents. En s'éloignant de plus en plus du centre, même les parties moyennement sombres vont disparaitre, ne laissant que les endroits très clair de l'image. Dans l'autre sens c'est l'inverse, d'abord les parties les plus clairs qui disparaissent, ne laissant que les noirs.
+Chaque piste possède un potentiomètre (le plus court tout près du chevalet) qui permet de rendre transparente des parties de l'image. En position centrale, sur le clic, la piste est uniformément opaque, sa transparence apparente dépendant uniquement de son "volume".
+
+Tourner le potentiomètre dans le sens d'une montre va rendre aux parties les plus sombres de devenir complètement transparentes. En s'éloignant de plus en plus du centre, même les parties moyennement sombres vont disparaitre, ne laissant que les endroits très clairs de l'image. Dans l'autre sens c'est l'inverse, ce sont d'abord les parties les plus claires qui disparaissent, ne laissant que les noirs.
 
 Aux endroits ou l'image est transparente, elle dévoilera les images qui sont en dessous. Pour cela il faut s'imaginer les 4 pistes de la vidéobasse comme des calques superposées.
-
