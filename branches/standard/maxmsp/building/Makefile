@@ -19,10 +19,10 @@
 ################################################################################
 
 NAME ?= Videobass-App
-VERSION ?= 3.1.0-BETA
+VERSION ?= 3.1.1
 
 SOURCE_DIR ?= .
-SOURCE_FILES ?= Videobass3.1.app ReadMe.rtf License.txt
+SOURCE_FILES ?= Videobass.app ReadMe.rtf License.txt
 
 TEMPLATE_DMG ?= template.dmg
 
