@@ -46,6 +46,8 @@ function paths(p,home) {
 
 	setting ("playback_size",						"320 240")
 
+	setting ("scale_path",							home+"Videobass Scales")
+
 
 	for (i=1;i<13;i++) {	setting ("dial_"+i+"_center",			"128")	}
 	for (i=1;i<5;i++) {		setting ("joystick_"+i+"_center_x",		"128")	}
