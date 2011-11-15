@@ -135,15 +135,18 @@ function set_clip(idx,path) {
 function clear() {
 	clip_count = 0;
 	calc_aspect();
-	outlet(o_matrixset,'dim',main_width,main_height);
-	outlet(o_matrixset,'matrixcount',600);
+//	outlet(o_matrixset,'dim',main_width,main_height);
+//	outlet(o_matrixset,'matrixcount',600);
 	filmstrip_backup.dim = [0,0];	
 	filmstrip_matrix.dim = [0,0];
 	
 	outlet(o_messages,'names','clear');
 	outlet(o_messages,'count',0);
 	outlet(o_messages,'active',1); /// ??????? K
-
+	
+	//render_placeholder("empty");
+	//	outlet(o_matrixset,'index',0);
+	//	outlet(o_matrixset, "jit_matrix", placeholder_matrix.name);
 }
 
 function loadbang() {
