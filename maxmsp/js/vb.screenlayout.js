@@ -1,21 +1,50 @@
 var windowpos = [2,50,602,450];
 var spacing = 10;
 var footer_height = 0;
-var info_height = 90;
+var info_height = 0;
 var scalemenu_height;
+var do_fullscreen = 0;
+var screensize = [0,0,1024,768];
+
+function coords(n,a,b,c,d) {
+	screensize = [a,b,c,d];
+}
+
+
+function fullscreen(i) {
+	do_fullscreen = i;
+	bang();
+}
 
 function bang() {
 	var p = this.patcher;
 	windowpos = p.wind.location;
-	var h = windowpos[3]-windowpos[1];
+	if (do_fullscreen) {windowpos = screensize;}
+
 	var w = windowpos[2]-windowpos[0];
+	var h = parseInt(w/16*9);
+
+	windowpos[3] = windowpos[1]+h;
+
+	
+	p.wind.location = windowpos;
+	
 	var temp = p.getnamed("scalemenu").rect;
 	scalemenu_height = temp[3]-temp[1];
 	
 	var filmstrip_height = parseInt((h - footer_height - 6 * spacing) / 4);
-	var main_height = parseInt((h - footer_height - info_height - scalemenu_height - 4 * spacing) / 32 * 15);
+	var main_height = parseInt((h - info_height - scalemenu_height - 4 * spacing) / 42 * 15);
+	info_height = parseInt(main_height/15*10);
 	var main_width = parseInt(main_height / 3 * 4);
 	var filmstrip_width = w - main_width - 3 * spacing;
+
+	post ("filmstrip_height:",filmstrip_height);post();
+	post ("main_height:",main_height);post();
+	post ("info_height:",info_height);post();
+	post ("main_width:",main_width);post();
+	post ("filmstrip_width:",filmstrip_width);post();
+	post ("scalemenu_height:",scalemenu_height);post();
+
 	
 	var f,y,x,i;
 	for (i = 0; i < 4; i++) {
@@ -26,11 +55,6 @@ function bang() {
 	}
 
 	var f_bottom = y + filmstrip_height;
-/*		y = f_bottom + spacing;
-	x = spacing;
-	f = p.getnamed("footer");
-	f.rect = [x,y,w-x,y+footer_height];
-*/	
 	x = w - spacing - main_width;
 	y = spacing;
 	f = p.getnamed("main");
@@ -51,5 +75,7 @@ function bang() {
 	f = p.getnamed("live");
 	y = f_bottom - main_height;
 	f.rect = [x, y, x + main_width, y + main_height];
+
+	outlet(0,do_fullscreen);
 
 }
