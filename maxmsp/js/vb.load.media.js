@@ -141,6 +141,8 @@ function start(){
 	
 	
 	idx = 0;
+	outlet(0,"rec_count",rec_count);
+
 	bang();
 }
 
@@ -161,7 +163,6 @@ function bang()	{
 		outlet(0,"add",media[idx]);
 	} else {
 		outlet(0,"clip_count",clip_count);
-		outlet(0,"rec_count",rec_count);
 		outlet(0,"missing",files_not_found);
 	}
 	idx++;

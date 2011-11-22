@@ -37,14 +37,14 @@ function bang() {
 	info_height = parseInt(main_height/15*10);
 	var main_width = parseInt(main_height / 3 * 4);
 	var filmstrip_width = w - main_width - 3 * spacing;
-
+/*
 	post ("filmstrip_height:",filmstrip_height);post();
 	post ("main_height:",main_height);post();
 	post ("info_height:",info_height);post();
 	post ("main_width:",main_width);post();
 	post ("filmstrip_width:",filmstrip_width);post();
 	post ("scalemenu_height:",scalemenu_height);post();
-
+*/
 	
 	var f,y,x,i;
 	for (i = 0; i < 4; i++) {
