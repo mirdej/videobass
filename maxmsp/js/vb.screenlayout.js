@@ -4,7 +4,7 @@ var footer_height = 25;
 var info_height = 0;
 var scalemenu_height;
 var do_fullscreen = 0;
-var screensize = [0,0,1024,768]
+var screensize = [0,0,1024,768];
 var buttons = ["btn_calibrate","btn_settings","btn_joysticks","btn_camera","btn_reload", "btn_clear"];
 
 function coords(n,a,b,c,d) {
@@ -82,14 +82,10 @@ function bang() {
 	y = f.rect[3] + spacing;
 	var btn_width = parseInt((filmstrip_width - (buttons.length - 1) * spacing)/buttons.length);
 	for (i = 0; i < buttons.length; i++) {
-			post(buttons[i]);
-
 		f = p.getnamed(buttons[i]);
 		f.rect = [x,y,x+btn_width, y+footer_height];
 		x += btn_width;		
 		x += spacing;
-		post(buttons[i]);
-		post (f.rect);post();
 	}
 	
 	outlet(0,do_fullscreen);
