@@ -4,11 +4,12 @@ var footer_height = 25;
 var info_height = 0;
 var scalemenu_height;
 var do_fullscreen = 0;
-var screensize = [0,0,1024,768];
+var fullscreensize = [0,60,1024,636];
+var smallscreensize = [0,60,1024,636];
 var buttons = ["btn_calibrate","btn_settings","btn_joysticks","btn_camera","btn_reload", "btn_clear"];
 
 function coords(n,a,b,c,d) {
-	screensize = [a,b,c,d];
+	fullscreensize = [a,b,c,d];
 }
 
 
@@ -19,9 +20,11 @@ function fullscreen(i) {
 
 function bang() {
 	var p = this.patcher;
-	windowpos = p.wind.location;
-	if (do_fullscreen) {windowpos = screensize;}
-
+	//windowpos = p.wind.location;
+	if (do_fullscreen) {windowpos = fullscreensize;}
+	else {windowpos = smallscreensize;}
+	
+// make sure window is 16/9
 	var w = windowpos[2]-windowpos[0];
 	var h = parseInt(w/16*9);
 

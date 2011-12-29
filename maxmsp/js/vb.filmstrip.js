@@ -51,6 +51,11 @@ var placeholder_text = new JitterObject ("jit.gl.text2d", "blank") ;
 	
 var placeholder_matrix = new JitterObject ("jit.matrix", "blank") ;         // rendering across a jit.matrix.
 	
+function strippath(p) {
+	var items = p.split('/');
+	var n = items.length - 1;
+	return items[n];
+}
 
 function calc_aspect() {
 	main_width = parseInt(main_height * aspect);
@@ -72,7 +77,7 @@ function add_clip(path) {
 
 		clip_count++;
 		outlet(o_messages,'count',clip_count);
-		outlet(o_messages,'message','Adding Clip:',path);
+		outlet(o_messages,'message','Adding Clip:',strippath(path));
 		
 // backup old filmstrip
 		filmstrip_backup.dim = filmstrip_matrix.dim;
