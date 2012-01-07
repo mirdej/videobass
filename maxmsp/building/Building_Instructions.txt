@@ -1,6 +1,7 @@
 Building instructions
 
 1) Open ../Videobass.maxpat with MaxMSP
+2) Make sure you switch to the main patch
 2) Build standalone Application into building folder
 3) Adapt version.txt
 3) Run make in building folder
