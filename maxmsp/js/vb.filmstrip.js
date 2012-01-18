@@ -97,7 +97,8 @@ function add_clip(path) {
 		filmstrip_matrix.frommatrix(filmstrip_backup.name);
 
 // add new picture
-		set_clip(clip_count - 1, path)
+		set_clip(clip_count - 1, path);
+		outlet(o_bang,'bang');
 }
 
 
@@ -134,7 +135,6 @@ function set_clip(idx,path) {
 		
 		outlet(o_matrix, "jit_matrix", filmstrip_matrix.name);
 		outlet(o_matrix,'bang');
-		outlet(o_bang,'bang');
 }
 
 function clear() {
