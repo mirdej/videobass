@@ -151,10 +151,12 @@ function set_scale(i) {
 	start();
 }
 function next_scale() {
+	if (scales.length < 2) return;
 	current_scale++;
 	start();
 }
 function prev_scale() {
+	if (scales.length < 2) return;
 	current_scale--;
 	start();
 }
