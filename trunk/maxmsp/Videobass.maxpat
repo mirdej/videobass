@@ -1,10 +1,10 @@
 {
 	"patcher" : 	{
 		"fileversion" : 1,
-		"rect" : [ 1034.0, 514.0, 304.0, 442.0 ],
+		"rect" : [ 1030.0, 326.0, 304.0, 442.0 ],
 		"bgcolor" : [ 0.792157, 0.792157, 0.784314, 1.0 ],
 		"bglocked" : 0,
-		"defrect" : [ 1034.0, 514.0, 304.0, 442.0 ],
+		"defrect" : [ 1030.0, 326.0, 304.0, 442.0 ],
 		"openrect" : [ 0.0, 0.0, 0.0, 0.0 ],
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -428,7 +428,7 @@
 , 							{
 								"box" : 								{
 									"maxclass" : "message",
-									"text" : "mv /Users/videobass/Videobass\\\\ Recordings/Recording002 /Users/videobass/Videobass\\\\ Recordings/2012-01-18-10-45-00",
+									"text" : "mv /Users/videobass/Videobass\\\\ Recordings/Recording004 /Users/videobass/Videobass\\\\ Recordings/2012-01-18-11-47-04",
 									"linecount" : 4,
 									"numinlets" : 2,
 									"id" : "obj-23",
@@ -550,7 +550,7 @@
 									"types" : "MooV",
 									"patching_rect" : [ 1365.0, 274.0, 100.0, 20.0 ],
 									"fontsize" : 12.0,
-									"items" : [ "Recording000", ",", "Recording001", ",", "Recording002" ],
+									"items" : [ "Recording000", ",", "Recording001", ",", "Recording002", ",", "Recording003", ",", "Recording004", ",", "Recording005", ",", "Recording006", ",", "Recording007", ",", "Recording008", ",", "Recording009", ",", "Recording010", ",", "Recording011" ],
 									"autopopulate" : 1
 								}
 
@@ -640,7 +640,7 @@
 , 							{
 								"box" : 								{
 									"maxclass" : "message",
-									"text" : "mv /Users/videobass/Videobass\\\\ Recordings /Users/videobass/Videobass\\\\ Recordings_2012-01-18-11-48",
+									"text" : "mv /Users/videobass/Videobass\\\\ Recordings /Users/videobass/Videobass\\\\ Recordings_",
 									"linecount" : 2,
 									"numinlets" : 2,
 									"id" : "obj-36",
@@ -722,13 +722,14 @@
 , 							{
 								"box" : 								{
 									"maxclass" : "message",
-									"text" : "datestamp",
+									"text" : "2012-01-18-11-47-04",
+									"linecount" : 2,
 									"numinlets" : 2,
 									"id" : "obj-17",
 									"fontname" : "Arial",
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 622.0, 323.0, 67.0, 18.0 ],
+									"patching_rect" : [ 622.0, 323.0, 67.0, 32.0 ],
 									"fontsize" : 12.0
 								}
 
@@ -7930,10 +7931,10 @@
 					"fontsize" : 12.0,
 					"patcher" : 					{
 						"fileversion" : 1,
-						"rect" : [ 3.0, 47.0, 1024.0, 576.0 ],
+						"rect" : [ 0.0, 60.0, 1024.0, 576.0 ],
 						"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 						"bglocked" : 0,
-						"defrect" : [ 3.0, 47.0, 1024.0, 576.0 ],
+						"defrect" : [ 0.0, 60.0, 1024.0, 576.0 ],
 						"openrect" : [ 0.0, 0.0, 0.0, 0.0 ],
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -9399,9 +9400,9 @@
 									"fontsize" : 12.0,
 									"patcher" : 									{
 										"fileversion" : 1,
-										"rect" : [ -128.0, 59.0, 1488.0, 627.0 ],
+										"rect" : [ 0.0, 59.0, 1500.0, 687.0 ],
 										"bglocked" : 0,
-										"defrect" : [ -128.0, 59.0, 1488.0, 627.0 ],
+										"defrect" : [ 0.0, 59.0, 1500.0, 687.0 ],
 										"openrect" : [ 0.0, 0.0, 0.0, 0.0 ],
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -9873,7 +9874,7 @@
 													"fontname" : "Arial",
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "int" ],
-													"patching_rect" : [ 387.0, 438.0, 32.5, 20.0 ],
+													"patching_rect" : [ 387.0, 433.0, 32.5, 20.0 ],
 													"fontsize" : 12.0
 												}
 
@@ -10477,7 +10478,7 @@
 													"source" : [ "obj-67", 0 ],
 													"destination" : [ "obj-35", 0 ],
 													"hidden" : 0,
-													"midpoints" : [  ]
+													"midpoints" : [ 396.5, 465.0, 54.5, 465.0 ]
 												}
 
 											}
@@ -11853,32 +11854,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"patching_rect" : [ 263.0, 140.0, 20.0, 20.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"maxclass" : "newobj",
-									"text" : "print cnt",
-									"numinlets" : 1,
-									"id" : "obj-3",
-									"fontname" : "Arial",
-									"numoutlets" : 0,
-									"patching_rect" : [ 686.0, 367.0, 53.0, 20.0 ],
-									"fontsize" : 12.0
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"maxclass" : "newobj",
-									"text" : "print relo",
-									"numinlets" : 1,
-									"id" : "obj-2",
-									"fontname" : "Arial",
-									"numoutlets" : 0,
-									"patching_rect" : [ 784.0, 358.0, 57.0, 20.0 ],
-									"fontsize" : 12.0
 								}
 
 							}
@@ -13291,24 +13266,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"source" : [ "obj-18", 0 ],
-									"destination" : [ "obj-2", 0 ],
-									"hidden" : 0,
-									"midpoints" : [  ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"source" : [ "obj-90", 0 ],
-									"destination" : [ "obj-3", 0 ],
-									"hidden" : 0,
-									"midpoints" : [  ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"source" : [ "obj-37", 0 ],
 									"destination" : [ "obj-5", 0 ],
 									"hidden" : 0,
@@ -13423,7 +13380,7 @@
 , 							{
 								"box" : 								{
 									"maxclass" : "message",
-									"text" : "1.092762",
+									"text" : "1.128086",
 									"linecount" : 2,
 									"numinlets" : 2,
 									"id" : "obj-61",

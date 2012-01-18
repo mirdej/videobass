@@ -132,11 +132,11 @@ function start(){
   	 	f.next();
   	}
 	//-------------------- Add empty slots if applicable
-	idx = 0;
+	idx = rec_count;
 	while (rec_slots > 0) {
 	 	rec_slots--;
-	 	idx++;
 	 	media.push("Recording"+zeropad(idx))
+	 	idx++;
 	}
 	
 	
