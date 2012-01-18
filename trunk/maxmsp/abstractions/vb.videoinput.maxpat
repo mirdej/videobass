@@ -22,13 +22,26 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"maxclass" : "newobj",
-					"text" : "delay 2000",
-					"numinlets" : 2,
-					"id" : "obj-119",
+					"text" : "r cam_focus",
+					"numinlets" : 0,
+					"id" : "obj-111",
 					"fontname" : "Arial",
 					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 1021.0, 50.0, 69.0, 20.0 ],
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1048.0, 51.0, 76.0, 20.0 ],
+					"fontsize" : 12.0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"maxclass" : "newobj",
+					"text" : "print",
+					"numinlets" : 1,
+					"id" : "obj-104",
+					"fontname" : "Arial",
+					"numoutlets" : 0,
+					"patching_rect" : [ 1098.0, 230.0, 34.0, 20.0 ],
 					"fontsize" : 12.0
 				}
 
@@ -2451,8 +2464,8 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"source" : [ "obj-61", 1 ],
-					"destination" : [ "obj-119", 0 ],
+					"source" : [ "obj-111", 0 ],
+					"destination" : [ "obj-4", 0 ],
 					"hidden" : 0,
 					"midpoints" : [  ]
 				}
@@ -2460,8 +2473,17 @@
 			}
 , 			{
 				"patchline" : 				{
-					"source" : [ "obj-119", 0 ],
+					"source" : [ "obj-61", 1 ],
 					"destination" : [ "obj-4", 0 ],
+					"hidden" : 0,
+					"midpoints" : [  ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"source" : [ "obj-2", 0 ],
+					"destination" : [ "obj-104", 0 ],
 					"hidden" : 0,
 					"midpoints" : [  ]
 				}
