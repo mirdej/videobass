@@ -428,7 +428,7 @@
 , 							{
 								"box" : 								{
 									"maxclass" : "message",
-									"text" : "mv /Users/videobass/Videobass\\\\ Recordings/Recording004 /Users/videobass/Videobass\\\\ Recordings/2012-01-18-11-47-04",
+									"text" : "mv /Users/videobass/Videobass\\\\ Recordings/Recording014 /Users/videobass/Videobass\\\\ Recordings/2012-01-18-12-52-09",
 									"linecount" : 4,
 									"numinlets" : 2,
 									"id" : "obj-23",
@@ -550,7 +550,7 @@
 									"types" : "MooV",
 									"patching_rect" : [ 1365.0, 274.0, 100.0, 20.0 ],
 									"fontsize" : 12.0,
-									"items" : [ "Recording000", ",", "Recording001", ",", "Recording002", ",", "Recording003", ",", "Recording004", ",", "Recording005", ",", "Recording006", ",", "Recording007", ",", "Recording008", ",", "Recording009", ",", "Recording010", ",", "Recording011" ],
+									"items" : [ "Recording000", ",", "Recording001", ",", "Recording002", ",", "Recording003", ",", "Recording004", ",", "Recording005", ",", "Recording006", ",", "Recording007", ",", "Recording008", ",", "Recording009", ",", "Recording010", ",", "Recording011", ",", "Recording012", ",", "Recording013", ",", "Recording014" ],
 									"autopopulate" : 1
 								}
 
@@ -640,7 +640,7 @@
 , 							{
 								"box" : 								{
 									"maxclass" : "message",
-									"text" : "mv /Users/videobass/Videobass\\\\ Recordings /Users/videobass/Videobass\\\\ Recordings_",
+									"text" : "mv /Users/videobass/Videobass\\\\ Recordings /Users/videobass/Videobass\\\\ Recordings_2012-01-18-12-52-09",
 									"linecount" : 2,
 									"numinlets" : 2,
 									"id" : "obj-36",
@@ -722,7 +722,7 @@
 , 							{
 								"box" : 								{
 									"maxclass" : "message",
-									"text" : "2012-01-18-11-47-04",
+									"text" : "2012-01-18-12-52-09",
 									"linecount" : 2,
 									"numinlets" : 2,
 									"id" : "obj-17",
@@ -8406,7 +8406,7 @@
 									"arrowbgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor2" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"framecolor" : [ 0.078431, 0.078431, 0.078431, 1.0 ],
-									"items" : [ "BeautifulLeopard", ",", "Kuhlturm" ],
+									"items" : "<empty>",
 									"arrow" : 0
 								}
 
