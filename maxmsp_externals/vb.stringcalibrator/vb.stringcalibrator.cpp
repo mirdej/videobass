@@ -22,6 +22,9 @@ typedef struct _vbstring				// defines our object's internal variables for each 
 	long	lo_thresh;
 	long	hi_thresh;
 	
+	long	old_val;
+	long	calibration_timer;
+	
 	long  	lo_bak,hi_bak;
 		
 } t_vbstring;
@@ -38,7 +41,8 @@ extern "C" {int main(void);}
 
 
 static void vbstring_int(t_vbstring *x, long n) {
-	
+	t_atom myNumber; 
+
 	if (n < x->absolute_minimum) x->absolute_minimum = n;
 	if (n > x->absolute_maximum) x->absolute_maximum = n;
 	
@@ -47,10 +51,31 @@ static void vbstring_int(t_vbstring *x, long n) {
 		return;
 	}
 	
+
 	if (x->calibrating) {
+	
+	// only accept stable values
+
+		if (abs(n - x->old_val) < 3) {
+			x->calibration_timer++;
+
+		} else {
+			x->calibration_timer = 0;
+			atom_setlong(&myNumber, 0);
+		   	outlet_anything(x->out_dump, gensym("calib"), 1, &myNumber);
+		}
+		
+		if (x->calibration_timer > 8) {
+			atom_setlong(&myNumber, 1);
+		   	outlet_anything(x->out_dump, gensym("calib"), 1, &myNumber);
+
 			if (n < x->lo_thresh) x->lo_thresh = n;
 			if (n > x->hi_thresh) x->hi_thresh = n;
-	}	
+			x->calibration_timer = 0;
+		}
+	}
+	
+	x->old_val = n;
 
 	if (n < x->lo_thresh) n = x->lo_thresh;
 	if (n > x->hi_thresh) n = x->hi_thresh;
