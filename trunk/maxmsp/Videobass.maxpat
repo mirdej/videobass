@@ -6573,7 +6573,6 @@
 						"enablehscroll" : 1,
 						"enablevscroll" : 1,
 						"devicewidth" : 0.0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"maxclass" : "newobj",
@@ -13701,9 +13700,9 @@
 					"numoutlets" : 1,
 					"patcher" : 					{
 						"fileversion" : 1,
-						"rect" : [ 110.0, 243.0, 1276.0, 730.0 ],
+						"rect" : [ 4.0, 243.0, 1276.0, 730.0 ],
 						"bglocked" : 0,
-						"defrect" : [ 110.0, 243.0, 1276.0, 730.0 ],
+						"defrect" : [ 4.0, 243.0, 1276.0, 730.0 ],
 						"openrect" : [ 0.0, 0.0, 0.0, 0.0 ],
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
