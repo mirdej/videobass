@@ -32,7 +32,7 @@ function unfold(state) {
 	if (state == unfolded) return;
 	unfolded = state;
 	
-	if (unfolded) {
+	if (unfolded == 1) {
 		outlet(o_preview,'read',paths[current_clip]);
 	} else {
 	}
