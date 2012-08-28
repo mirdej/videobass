@@ -33,6 +33,7 @@ function paths(p,home) {
 	setting ("camera_hue",							"0.5")
 	
 	setting ("fullscreen",							"1")
+	setting ("speed_range",							"-1. 1.")
 
 	setting ("pedal_pad",							"5")
 	setting ("strings_flipback_time",				"2000")
