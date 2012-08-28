@@ -46,7 +46,8 @@ void vbtransport_trigger(t_vbtransport *x,long n) {
 		x->loop_lock = 0;
 		x->loop_out = floor(x->current);				// store position for possible loop out
 		x->loop_in = 0;
-		x->current = (double)x->loop_in;
+//		x->current = (double)x->loop_in;
+		outlet_int(x->outlet,x->loop_in);
 	}
 }
 
@@ -57,7 +58,8 @@ void vbtransport_jumpto(t_vbtransport *x,long n) {
 	x->loop_lock = 0;
 	x->loop_out = floor(x->current);				// store position for possible loop out
 	x->loop_in = n;							// store jump position for possible loop in
-	x->current = (double)x->loop_in;
+//	x->current = (double)x->loop_in;
+	outlet_int(x->outlet,x->loop_in);
 	x->trigger = 1;
 }
 
@@ -67,11 +69,8 @@ void vbtransport_jumpto(t_vbtransport *x,long n) {
 // Implementation
 // ------------------------------------------------------------------------------
 
-void vbtransport_bang(t_vbtransport *x){
+void vbtransport_int(t_vbtransport *x, long the_time){
 
-
-
-	if (x->active < 1) 		return;
 	if (x->loop_out > x->length) x->loop_out = x->length;
 	if (x->loop_in > x->length) x->loop_in = 0;
 
@@ -85,35 +84,35 @@ void vbtransport_bang(t_vbtransport *x){
 		}
 	}
 
-	
-	x->current = (x->current + (((double)x->timescale / 25) * x->speed));
+	x->current = the_time;
+//	x->current = (x->current + (((double)x->timescale / 25) * x->speed));
 
 	if (x->speed < 0.) {
 	
 		if (x->loop_lock) { 	// we're in looping mode
 			if (x->loop_in < x->loop_out) {	// "inverse loop" - looping over clip end
-				if ((x->current > x->loop_in) && (x->current < x->loop_out))  {
-					x->current = x->loop_in + (x->current - x->loop_out);
+				if ((the_time > x->loop_in) && (the_time < x->loop_out))  {
+					x->current = x->loop_in + (the_time - x->loop_out);
 					x->loop_count ++;
 				}
 			} else {
-				if (x->current < x->loop_out) {
+				if (the_time < x->loop_out) {
 					x->loop_count ++;
-					x->current = x->loop_in + (x->current - x->loop_out);
+					x->current = x->loop_in + (the_time - x->loop_out);
 				}
-				if (x->current > x->loop_in) x->current = x->loop_out - (x->loop_in - x->current);
+				if (x->current > x->loop_in) x->current = x->loop_out - (x->loop_in - the_time);
 			}
 	
 		} else {			// we're in free running mode
 		
 			if (x->trigger) {
 				if (x->loop_in < x->loop_out) {	// "inverse loop" - looping over clip end
-					if ((x->current > x->loop_in) && (x->current < x->loop_out)) {
+					if ((the_time > x->loop_in) && (the_time < x->loop_out)) {
 						x->loop_lock = 1;
 						x->loop_count = 0;
 				}
 				} else {
-					if (x->current < x->loop_out) {
+					if (the_time < x->loop_out) {
 						x->loop_lock = 1;
 						x->loop_count = 0;
 					}
@@ -125,28 +124,28 @@ void vbtransport_bang(t_vbtransport *x){
 
 		if (x->loop_lock) { 	// we're in looping mode
 			if (x->loop_in > x->loop_out) {	// "inverse loop" - looping over clip end
-				if ((x->current < x->loop_in) && (x->current > x->loop_out)) {
+				if ((the_time < x->loop_in) && (the_time > x->loop_out)) {
 					x->loop_count ++;
-					x->current = x->loop_in + (x->current - x->loop_out);
+					x->current = x->loop_in + (the_time - x->loop_out);
 				}
 			} else {
-				if (x->current > x->loop_out) {		// another loop
-					x->current = x->loop_in + (x->current - x->loop_out);
+				if (the_time > x->loop_out) {		// another loop
+					x->current = x->loop_in + (the_time - x->loop_out);
 					x->loop_count ++;
 				}
-				if (x->current < x->loop_in) x->current = x->loop_out - (x->loop_in - x->current);
+				if (the_time < x->loop_in) x->current = x->loop_out - (the_time - x->current);
 			}
 			
 		} else {			// we're in free running mode
 		
 			if (x->trigger) {
 				if (x->loop_in > x->loop_out) {	// "inverse loop" - looping over clip end
-					if ((x->current < x->loop_in) && (x->current > x->loop_out)) {
+					if ((the_time < x->loop_in) && (the_time > x->loop_out)) {
 						x->loop_lock = 1;
 						x->loop_count = 0;
 				}
 				} else {
-					if (x->current > x->loop_out) {
+					if (the_time > x->loop_out) {
 						x->loop_lock = 1;
 						x->loop_count = 0;
 					}
@@ -165,7 +164,10 @@ void vbtransport_bang(t_vbtransport *x){
 	}
 	if (x->current > x->length) x->current -= x->length;
 	if ((x->current) < 0) x->current = x->length + x->current;
-	outlet_int(x->outlet,(long)floor(x->current));
+	
+	if (x->current != the_time) {
+		outlet_int(x->outlet,(long)floor(x->current));
+	}
 }
 
 //-----------------------------------------------------------------------------------
@@ -194,6 +196,7 @@ static void *vbtransport_new(t_symbol *s)
 	if (x = (t_vbtransport *)object_alloc(vbtransport_class)) {
 		x->outlet = intout(x);
 	}	
+	post("new vb.transport");
 	return x;													// return a reference to the object instance 
 }
 
@@ -223,7 +226,7 @@ int main(void)
 	t_class	*c;
 	c = class_new("vb.transport", (method)vbtransport_new, (method)vbtransport_free, (short)sizeof(t_vbtransport), 0L, A_GIMME, 0);
 	
-	class_addmethod(c, (method)vbtransport_bang, "bang", 0);
+	class_addmethod(c, (method)vbtransport_int, "int", A_DEFLONG, 0);
 	class_addmethod(c, (method)vbtransport_speed, "speed", A_DEFFLOAT, 0);
 	class_addmethod(c, (method)vbtransport_trigger, "trigger", A_DEFLONG, 0);
 	class_addmethod(c, (method)vbtransport_jumpto, "jump_to", A_DEFLONG, 0);
