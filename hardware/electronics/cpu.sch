@@ -16094,7 +16094,7 @@ NS Package M08A</description>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="IC1" library="linear" deviceset="LM833" device="D"/>
+<part name="IC1" library="linear" deviceset="LM833" device="D" value="MPC662"/>
 <part name="VDD1" library="supply1" deviceset="VDD" device=""/>
 <part name="VDD2" library="supply1" deviceset="VDD" device=""/>
 <part name="VDD3" library="supply1" deviceset="VDD" device=""/>
@@ -16115,7 +16115,7 @@ NS Package M08A</description>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="C2" library="rcl" deviceset="C-EU" device="C0603" value="100n"/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
-<part name="IC3" library="linear" deviceset="LM833" device="D"/>
+<part name="IC3" library="linear" deviceset="LM833" device="D" value="MPC662"/>
 <part name="R22" library="rcl" deviceset="R-EU_" device="R1206" value="1k8"/>
 <part name="R23" library="rcl" deviceset="R-EU_" device="R1206" value="4k7"/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
