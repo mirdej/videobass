@@ -3,9 +3,12 @@ var preferences_path;
 function setting (name,setting) {
 	var fname = preferences_path+name+".txt";
 	var f;
+//	post ("checking setting: ",fname);
 // see if file exists already
 	f = new File(fname);
-	if (f.eof == -1) {
+	//post (f.eof); post();
+	if (f.eof < 1) {
+		post ("create setting: ",fname,setting);post();
 		f = new File(fname, "write");	
 		f.open()
 		f.writestring(setting);
