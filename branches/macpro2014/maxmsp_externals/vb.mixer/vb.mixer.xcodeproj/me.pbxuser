@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Deployment;
+		activeExecutable = 8C673FC60FD4698C00BD68A2 /* Executable */;
+		activeTarget = 2FBBEAD608F335360078DB84 /* vb.mixer */;
+		addToTargets = (
+			2FBBEAD608F335360078DB84 /* vb.mixer */,
+		);
+		breakpoints = (
+		);
+		codeSenseManager = 8C1609480F20DB8F002B5B41 /* Code sense */;
+		executables = (
+			8C673FC60FD4698C00BD68A2 /* Executable */,
+			8C673FCA0FD46A6500BD68A2 /* ExecutableHelpfile */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					307,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					419,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					379,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 334075132;
+			PBXWorkspaceStateSaveDate = 334075132;
+		};
+		perUserProjectItems = {
+			8CBEF3AF13E9955400BF00FB /* XCBuildMessageTextBookmark */ = 8CBEF3AF13E9955400BF00FB /* XCBuildMessageTextBookmark */;
+			8CBEF3B013E9955400BF00FB /* PBXTextBookmark */ = 8CBEF3B013E9955400BF00FB /* PBXTextBookmark */;
+			8CBEF3BC13E9A13500BF00FB /* PBXTextBookmark */ = 8CBEF3BC13E9A13500BF00FB /* PBXTextBookmark */;
+			8CBEF3BF13E9A28900BF00FB /* PBXTextBookmark */ = 8CBEF3BF13E9A28900BF00FB /* PBXTextBookmark */;
+			8CBEF3C213E9A3DC00BF00FB /* PBXTextBookmark */ = 8CBEF3C213E9A3DC00BF00FB /* PBXTextBookmark */;
+			8CBEF3C513E9A42600BF00FB /* PBXTextBookmark */ = 8CBEF3C513E9A42600BF00FB /* PBXTextBookmark */;
+			8CBEF3C813E9A48900BF00FB /* PBXTextBookmark */ = 8CBEF3C813E9A48900BF00FB /* PBXTextBookmark */;
+			8CBEF3CB13E9A62000BF00FB /* PBXTextBookmark */ = 8CBEF3CB13E9A62000BF00FB /* PBXTextBookmark */;
+			8CBEF3CE13E9A62800BF00FB /* PBXTextBookmark */ = 8CBEF3CE13E9A62800BF00FB /* PBXTextBookmark */;
+			8CBEF3D113E9A65A00BF00FB /* PBXTextBookmark */ = 8CBEF3D113E9A65A00BF00FB /* PBXTextBookmark */;
+			8CBEF3D213E9AD2700BF00FB /* PBXTextBookmark */ = 8CBEF3D213E9AD2700BF00FB /* PBXTextBookmark */;
+			8CBEF3D713E9B04E00BF00FB /* PBXTextBookmark */ = 8CBEF3D713E9B04E00BF00FB /* PBXTextBookmark */;
+			8CBEF3DA13E9B0B100BF00FB /* PBXTextBookmark */ = 8CBEF3DA13E9B0B100BF00FB /* PBXTextBookmark */;
+			8CBEF3DD13E9B17300BF00FB /* PBXTextBookmark */ = 8CBEF3DD13E9B17300BF00FB /* PBXTextBookmark */;
+			8CBEF3E013E9B1A300BF00FB /* PBXTextBookmark */ = 8CBEF3E013E9B1A300BF00FB /* PBXTextBookmark */;
+			8CBEF3E313E9B1DB00BF00FB /* PBXTextBookmark */ = 8CBEF3E313E9B1DB00BF00FB /* PBXTextBookmark */;
+			8CBEF3E613E9B23300BF00FB /* PBXTextBookmark */ = 8CBEF3E613E9B23300BF00FB /* PBXTextBookmark */;
+			8CBEF3E913E9B39000BF00FB /* PBXTextBookmark */ = 8CBEF3E913E9B39000BF00FB /* PBXTextBookmark */;
+			8CBEF3EA13E9BD1800BF00FB /* PBXTextBookmark */ = 8CBEF3EA13E9BD1800BF00FB /* PBXTextBookmark */;
+			8CBEF3ED13E9BD2900BF00FB /* PBXTextBookmark */ = 8CBEF3ED13E9BD2900BF00FB /* PBXTextBookmark */;
+			8CBEF3F013E9BDED00BF00FB /* PBXTextBookmark */ = 8CBEF3F013E9BDED00BF00FB /* PBXTextBookmark */;
+			8CBEF3F313E9C06800BF00FB /* PBXTextBookmark */ = 8CBEF3F313E9C06800BF00FB /* PBXTextBookmark */;
+			8CBEF3F613EAB39700BF00FB /* PBXTextBookmark */ = 8CBEF3F613EAB39700BF00FB /* PBXTextBookmark */;
+			8CBEF3F913EAB47F00BF00FB /* PBXTextBookmark */ = 8CBEF3F913EAB47F00BF00FB /* PBXTextBookmark */;
+			8CBEF40113EAB6E200BF00FB /* XCBuildMessageTextBookmark */ = 8CBEF40113EAB6E200BF00FB /* XCBuildMessageTextBookmark */;
+			8CBEF40213EAB6E200BF00FB /* PBXTextBookmark */ = 8CBEF40213EAB6E200BF00FB /* PBXTextBookmark */;
+			8CBEF40613EAB6E800BF00FB /* PBXTextBookmark */ = 8CBEF40613EAB6E800BF00FB /* PBXTextBookmark */;
+			8CBEF40B13EAB77500BF00FB /* PBXTextBookmark */ = 8CBEF40B13EAB77500BF00FB /* PBXTextBookmark */;
+			8CBEF40E13EAB7BB00BF00FB /* PBXTextBookmark */ = 8CBEF40E13EAB7BB00BF00FB /* PBXTextBookmark */;
+			8CBEF41113EABA1900BF00FB /* PBXTextBookmark */ = 8CBEF41113EABA1900BF00FB /* PBXTextBookmark */;
+			8CBEF41413EAC41700BF00FB /* PBXTextBookmark */ = 8CBEF41413EAC41700BF00FB /* PBXTextBookmark */;
+		};
+		sourceControlManager = 8C1609470F20DB8F002B5B41 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	2FBBEAD608F335360078DB84 /* vb.mixer */ = {
+		activeExec = 0;
+	};
+	8C1609470F20DB8F002B5B41 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	8C1609480F20DB8F002B5B41 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	8C673FC60FD4698C00BD68A2 /* Executable */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+			"PBXLSLaunchAction-0" = {
+				PBXLSLaunchAction = 0;
+				PBXLSLaunchStartAction = 1;
+				PBXLSLaunchStdioStyle = 2;
+				PBXLSLaunchStyle = 0;
+				class = PBXLSRunLaunchConfig;
+				commandLineArgs = (
+				);
+				displayName = "Executable Runner";
+				environment = {
+				};
+				identifier = com.apple.Xcode.launch.runConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		launchableReference = 8C673FC70FD4698C00BD68A2 /* MaxMSP Runtime.app */;
+		libgmallocEnabled = 0;
+		name = Executable;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		startupPath = "/Users/me/Documents/development2008/MaxSDK-5.0.6/my_externalsMAX5/sdk-build/";
+		variableFormatDictionary = {
+			$cs = 1;
+			$ds = 1;
+			$eax = 1;
+			$ebp = 1;
+			$ebx = 1;
+			$ecx = 1;
+			$edi = 1;
+			$edx = 1;
+			$eflags = 1;
+			$eip = 1;
+			$es = 1;
+			$esi = 1;
+			$esp = 1;
+			$gs = 1;
+			$mm0 = 1;
+			$mm1 = 1;
+			$mm2 = 1;
+			$mm3 = 1;
+			$mm4 = 1;
+			$mm5 = 1;
+			$mm6 = 1;
+			$mm7 = 1;
+			$mxcsr = 1;
+			$ss = 1;
+			$xmm0 = 1;
+			$xmm1 = 1;
+			$xmm2 = 1;
+			$xmm3 = 1;
+			$xmm4 = 1;
+			$xmm5 = 1;
+			$xmm6 = 1;
+			$xmm7 = 1;
+		};
+	};
+	8C673FC70FD4698C00BD68A2 /* MaxMSP Runtime.app */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = wrapper.application;
+		name = "MaxMSP Runtime.app";
+		path = "/Applications/Max5/MaxMSP Runtime.app";
+		sourceTree = "<absolute>";
+	};
+	8C673FCA0FD46A6500BD68A2 /* ExecutableHelpfile */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+			"PBXLSLaunchAction-0" = {
+				PBXLSLaunchAction = 0;
+				PBXLSLaunchStartAction = 1;
+				PBXLSLaunchStdioStyle = 2;
+				PBXLSLaunchStyle = 0;
+				class = PBXLSRunLaunchConfig;
+				commandLineArgs = (
+				);
+				displayName = "Executable Runner";
+				environment = {
+				};
+				identifier = com.apple.Xcode.launch.runConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		launchableReference = 8C673FCB0FD46A6500BD68A2 /* multitouch.help.maxpat */;
+		libgmallocEnabled = 0;
+		name = ExecutableHelpfile;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	8C673FCB0FD46A6500BD68A2 /* multitouch.help.maxpat */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text;
+		name = multitouch.help.maxpat;
+		path = "/Users/me/Documents/development2008/MaxSDK-5.0.6/my_externalsMAX5/multitouch/multitouch.help.maxpat";
+		sourceTree = "<absolute>";
+	};
+	8CBEF3AF13E9955400BF00FB /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Expected unqualified-id before 'if'";
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 66;
+		rType = 1;
+	};
+	8CBEF3B013E9955400BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 202";
+		rLen = 0;
+		rLoc = 5323;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3BC13E9A13500BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 209";
+		rLen = 0;
+		rLoc = 5447;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3BF13E9A28900BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 210";
+		rLen = 0;
+		rLoc = 5490;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3C213E9A3DC00BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 212";
+		rLen = 0;
+		rLoc = 5518;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3C513E9A42600BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 212";
+		rLen = 0;
+		rLoc = 5521;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3C813E9A48900BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 212";
+		rLen = 0;
+		rLoc = 5521;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3CB13E9A62000BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 214";
+		rLen = 0;
+		rLoc = 5552;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3CE13E9A62800BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 214";
+		rLen = 0;
+		rLoc = 5553;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3D113E9A65A00BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 213";
+		rLen = 0;
+		rLoc = 5553;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3D213E9AD2700BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 213";
+		rLen = 0;
+		rLoc = 5551;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3D713E9B04E00BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 222";
+		rLen = 0;
+		rLoc = 5897;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3DA13E9B0B100BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 222";
+		rLen = 0;
+		rLoc = 5899;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3DD13E9B17300BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 222";
+		rLen = 0;
+		rLoc = 5903;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3E013E9B1A300BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 222";
+		rLen = 0;
+		rLoc = 5881;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3E313E9B1DB00BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 222";
+		rLen = 0;
+		rLoc = 5876;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3E613E9B23300BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 222";
+		rLen = 0;
+		rLoc = 5904;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3E913E9B39000BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 223";
+		rLen = 0;
+		rLoc = 5926;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3EA13E9BD1800BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 223";
+		rLen = 0;
+		rLoc = 5928;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3ED13E9BD2900BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 223";
+		rLen = 0;
+		rLoc = 5930;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3F013E9BDED00BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 223";
+		rLen = 0;
+		rLoc = 5934;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3F313E9C06800BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 227";
+		rLen = 0;
+		rLoc = 6023;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3F613EAB39700BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 193";
+		rLen = 0;
+		rLoc = 5161;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF3F913EAB47F00BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 193";
+		rLen = 0;
+		rLoc = 5181;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF40113EAB6E200BF00FB /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'sum' is used uninitialized in this function";
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 109;
+		rType = 1;
+	};
+	8CBEF40213EAB6E200BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 86";
+		rLen = 0;
+		rLoc = 2237;
+		rType = 0;
+		vrLen = 437;
+		vrLoc = 2099;
+	};
+	8CBEF40613EAB6E800BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 197";
+		rLen = 0;
+		rLoc = 5224;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF40B13EAB77500BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 198";
+		rLen = 0;
+		rLoc = 5260;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF40E13EAB7BB00BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 198";
+		rLen = 0;
+		rLoc = 5290;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF41113EABA1900BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 198";
+		rLen = 0;
+		rLoc = 5335;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	8CBEF41413EAC41700BF00FB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F798054A0E0461CE00A84891 /* vb.mixer.cpp */;
+		name = "vb.mixer.cpp: 201";
+		rLen = 0;
+		rLoc = 5431;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	F798054A0E0461CE00A84891 /* vb.mixer.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {597, 2639}}";
+			sepNavSelRange = "{5431, 0}";
+			sepNavVisRange = "{0, 0}";
+			sepNavWindowFrame = "{{19, -5}, {755, 878}}";
+		};
+	};
+}

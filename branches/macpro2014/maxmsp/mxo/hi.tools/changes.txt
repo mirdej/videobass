@@ -1,0 +1,16 @@
+Version 1.0.2:
+============================================
+- fixed matching by product
+- corrections in help files
+- added html usage tables index
+- fixed getting attributes on hi.in and hi.out
+- fixed hi.in and hi.out did not release old device if name was changed to inexistent device
+
+Version 1.0.1:
+============================================
+- Removed unnecessary dependency on libcpptest
+- Fixed crash when opening the HID manager returned an error
+- Fixed crash if a device does not have a location ID
+- 'product' and 'manuf' matching keys can now be specified as positional arguments
+- renamed file 'usagetables.db' to 'hi.usagetables.db'
+- allowed 'locationID' as a matching key

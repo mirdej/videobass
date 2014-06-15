@@ -1,0 +1,8 @@
+For this droplet to work, you'll have to create an export Setting named "vb" in iView Media Pro:
+
+1) Open a catalog in iView
+2) Choose "Make"->"Text Data File"
+3) Delete all included fields on the right side
+4) Add only the "Filename" field from the left to the right side
+5) Make sure "UTF-8" is selected as text encoding
+6) Click on "Options" and save this setting as "vb"
