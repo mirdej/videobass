@@ -9,7 +9,7 @@
 PROGMEM char usbDescriptorHidReport[] = {
 
 	UsagePage2(0x01),				// Generic Desktop
-	Usage2(0x08),					// Multi axis controller
+	Usage2(0x04),					// Joystick
 	
 	Collection2(Application),				//  --- Root Collection
 
